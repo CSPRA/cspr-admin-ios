@@ -1,0 +1,19 @@
+PODS:
+  - XLForm (3.0.2)
+
+DEPENDENCIES:
+  - XLForm (from `https://github.com/xmartlabs/XLForm.git`)
+
+EXTERNAL SOURCES:
+  XLForm:
+    :git: https://github.com/xmartlabs/XLForm.git
+
+CHECKOUT OPTIONS:
+  XLForm:
+    :commit: a4fc47d5b0a7fe32dfd3e8df524b59d2bfbc5f59
+    :git: https://github.com/xmartlabs/XLForm.git
+
+SPEC CHECKSUMS:
+  XLForm: 7817ce29f3f259186e837bb7309ac7e5b7e9b883
+
+COCOAPODS: 0.39.0
