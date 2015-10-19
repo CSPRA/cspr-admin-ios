@@ -10,7 +10,7 @@
 
 @interface ICSModel : NSObject
 
-- (ICSModel*)sharedModel;
++ (ICSModel*)sharedModel;
 - (BOOL)loggedInUserPresent;
 
 @end

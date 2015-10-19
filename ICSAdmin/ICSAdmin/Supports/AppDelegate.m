@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "ICSModel.h"
+#import "ContainerViewController.h"
+#import "LoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -49,8 +51,29 @@
 #pragma mark - 
 
 -(void)setupRootViewController {
-
+  UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+  UIStoryboard *loginStoryBoard = [UIStoryboard storyboardWithName:@"Login" bundle:[NSBundle mainBundle]];
+  LoginViewController *loginVC = [loginStoryBoard instantiateViewControllerWithIdentifier:@"LoginVC"];
+  UINavigationController *navVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"MainNavigation"];
+  UINavigationController *loginNavigation = [loginStoryBoard instantiateViewControllerWithIdentifier:@"LoginNavigation"];
+  ContainerViewController *containerVC = [[ContainerViewController alloc]initWithViewControllers:@[loginNavigation,navVC]];
+  self.window.rootViewController = containerVC;
+  [self.window makeKeyAndVisible];
+  if ([[ICSModel sharedModel] loggedInUserPresent]) {
+//	[self showChatFlow];
+  }else {
+	[self showLoginFlow];
+  }
 }
+
+- (ContainerViewController *)containerViewController {
+  return (ContainerViewController *) self.window.rootViewController;
+}
+
+- (void)showLoginFlow {
+  [[self containerViewController]moveToViewControllerWithIndex:0];
+}
+
 
 #pragma mark - Core Data stack
 

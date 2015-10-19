@@ -13,7 +13,7 @@ static ICSModel *sharedInstance;
 
 @implementation ICSModel
 
-- (ICSModel *)sharedModel {
++ (ICSModel *)sharedModel {
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
 	sharedInstance = [ICSModel new];
