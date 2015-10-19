@@ -53,17 +53,22 @@
 -(void)setupRootViewController {
   UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
   UIStoryboard *loginStoryBoard = [UIStoryboard storyboardWithName:@"Login" bundle:[NSBundle mainBundle]];
-  LoginViewController *loginVC = [loginStoryBoard instantiateViewControllerWithIdentifier:@"LoginVC"];
   UINavigationController *navVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"MainNavigation"];
   UINavigationController *loginNavigation = [loginStoryBoard instantiateViewControllerWithIdentifier:@"LoginNavigation"];
-  ContainerViewController *containerVC = [[ContainerViewController alloc]initWithViewControllers:@[loginNavigation,navVC]];
-  self.window.rootViewController = containerVC;
-  [self.window makeKeyAndVisible];
+  
+
   if ([[ICSModel sharedModel] loggedInUserPresent]) {
-//	[self showChatFlow];
+ContainerViewController *containerVC = [[ContainerViewController alloc]initWithViewControllers:@[navVC,loginNavigation]];
+self.window.rootViewController = containerVC;
+//	[self showHomeFlow];
   }else {
-	[self showLoginFlow];
+//	[self showLoginFlow];
+ ContainerViewController *containerVC = [[ContainerViewController alloc]initWithViewControllers:@[loginNavigation,navVC]];
+ self.window.rootViewController = containerVC;
+
   }
+  
+  [self.window makeKeyAndVisible];
 }
 
 - (ContainerViewController *)containerViewController {
@@ -72,6 +77,10 @@
 
 - (void)showLoginFlow {
   [[self containerViewController]moveToViewControllerWithIndex:0];
+}
+
+- (void)showHomeFlow {
+  [[self containerViewController]moveToViewControllerWithIndex:1];
 }
 
 

@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "AppDelegate.h"
 
 @interface LoginViewController ()
 
@@ -22,6 +23,11 @@
 - (void)didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];
 	// Dispose of any resources that can be recreated.
+}
+
+- (IBAction)handleTapOnLogin:(id)sender {
+  AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+  [appDelegate showHomeFlow];
 }
 
 @end
