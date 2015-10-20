@@ -1,7 +1,9 @@
 PODS:
+  - AMSlideMenu (1.5.4)
   - XLForm (3.0.2)
 
 DEPENDENCIES:
+  - AMSlideMenu (~> 1.5.4)
   - XLForm (from `https://github.com/xmartlabs/XLForm.git`)
 
 EXTERNAL SOURCES:
@@ -14,6 +16,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/xmartlabs/XLForm.git
 
 SPEC CHECKSUMS:
+  AMSlideMenu: 8571937703d2b8e187b22c1416be4cafc3532a11
   XLForm: 7817ce29f3f259186e837bb7309ac7e5b7e9b883
 
 COCOAPODS: 0.39.0
