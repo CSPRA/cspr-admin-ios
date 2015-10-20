@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <RUMSlidingMenuCenterProtocol.h>
 
 @interface HomeViewController : UIViewController
-
 @end

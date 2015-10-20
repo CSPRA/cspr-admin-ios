@@ -10,6 +10,10 @@
 #import "ICSModel.h"
 #import "ContainerViewController.h"
 #import "LoginViewController.h"
+#import <RUMSlidingMenuViewController.h>
+#import "MenuViewController.h"
+#import "HomeViewController.h"
+#import "CustomNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -53,17 +57,28 @@
 -(void)setupRootViewController {
   UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
   UIStoryboard *loginStoryBoard = [UIStoryboard storyboardWithName:@"Login" bundle:[NSBundle mainBundle]];
-  UINavigationController *navVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"MainNavigation"];
+//  CustomNavigationController *navVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"MainNavigation"];
   UINavigationController *loginNavigation = [loginStoryBoard instantiateViewControllerWithIdentifier:@"LoginNavigation"];
   
+  MenuViewController *menuVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"MenuVC"];
+  HomeViewController *homeVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"HomeVC"];
+  CustomNavigationController *navVC = [[CustomNavigationController alloc]initWithRootViewController:homeVC];
+  self.slidingMenuContainer = [[RUMSlidingMenuViewController alloc]initWithRootViewController:navVC
+  leftViewController:menuVC
+  rightViewController:nil];
+  
+  NSLog(@"main = %@",self.slidingMenuContainer.mainViewController);
+//  UINavigationController *navVC = [[UINavigationController alloc]initWithRootViewController:slidingMenuContainer];
+//  [navVC setTitle:@"Home"];
+//  [navVC setViewControllers:@[slidingMenuContainer]];
 
   if ([[ICSModel sharedModel] loggedInUserPresent]) {
-ContainerViewController *containerVC = [[ContainerViewController alloc]initWithViewControllers:@[navVC,loginNavigation]];
+ContainerViewController *containerVC = [[ContainerViewController alloc]initWithViewControllers:@[self.slidingMenuContainer,loginNavigation]];
 self.window.rootViewController = containerVC;
 //	[self showHomeFlow];
   }else {
 //	[self showLoginFlow];
- ContainerViewController *containerVC = [[ContainerViewController alloc]initWithViewControllers:@[loginNavigation,navVC]];
+ ContainerViewController *containerVC = [[ContainerViewController alloc]initWithViewControllers:@[loginNavigation,self.slidingMenuContainer]];
  self.window.rootViewController = containerVC;
 
   }

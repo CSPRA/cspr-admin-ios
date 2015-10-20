@@ -23,7 +23,7 @@ static ICSModel *sharedInstance;
 }
 
 - (BOOL)loggedInUserPresent {
-  return NO;
+  return YES;
 }
 
 @end

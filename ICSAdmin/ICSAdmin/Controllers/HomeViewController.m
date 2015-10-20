@@ -24,7 +24,6 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self configureDateSelector];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,6 +40,11 @@
   self.fromDateLabel.text = [NSString stringWithFormat:@"%@",[self.fromDatePicker.date formattedDateString]];
   self.toDateLabel.text = [NSString stringWithFormat:@"%@",[self.toDatePicker.date formattedDateString]];
 
+}
+- (IBAction)handleMenuTap:(id)sender {
+//  if ([self.delegate respondsToSelector:@selector(toggleLeftMenu)]) {
+//	[self.delegate toggleLeftMenu];
+//  }
 }
 
 - (void)toggleFromDatePicker:(UIGestureRecognizer *)gesture {
@@ -70,5 +74,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - 
 
 @end

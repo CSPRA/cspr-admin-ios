@@ -1,14 +1,88 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XEt-eu-1vL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="980-et-qAv">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Menu View Controller-->
+        <scene sceneID="caD-0p-SNY">
+            <objects>
+                <viewController storyboardIdentifier="MenuVC" id="Hm4-AC-Emt" customClass="MenuViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PRl-lT-y29"/>
+                        <viewControllerLayoutGuide type="bottom" id="u57-il-ZLb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5VC-3W-lrT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="indian-cancer-society-logo" translatesAutoresizingMaskIntoConstraints="NO" id="m3X-JN-niX">
+                                <rect key="frame" x="50" y="20" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="NPn-kB-qQj"/>
+                                    <constraint firstAttribute="height" constant="120" id="uKz-jq-eda"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vK6-81-z5P">
+                                <rect key="frame" x="0.0" y="140" width="600" height="460"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="menuCell" id="YdY-fI-h69">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YdY-fI-h69" id="E9M-bl-Udd">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Hm4-AC-Emt" id="y3h-n4-MrL"/>
+                                    <outlet property="delegate" destination="Hm4-AC-Emt" id="e9d-7f-Rwx"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89411764705882357" green="0.70535314908765168" blue="0.67539535008997198" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="m3X-JN-niX" firstAttribute="bottom" secondItem="vK6-81-z5P" secondAttribute="top" id="8Ra-hN-Yf6"/>
+                            <constraint firstItem="u57-il-ZLb" firstAttribute="bottom" secondItem="vK6-81-z5P" secondAttribute="bottom" id="GCX-2y-kv8"/>
+                            <constraint firstAttribute="trailing" secondItem="m3X-JN-niX" secondAttribute="trailing" id="Rtg-Vp-cbf"/>
+                            <constraint firstItem="vK6-81-z5P" firstAttribute="leading" secondItem="5VC-3W-lrT" secondAttribute="leading" id="Uuy-Hi-ae6"/>
+                            <constraint firstAttribute="trailing" secondItem="vK6-81-z5P" secondAttribute="trailing" id="Xsk-IW-4NA"/>
+                            <constraint firstItem="m3X-JN-niX" firstAttribute="leading" secondItem="5VC-3W-lrT" secondAttribute="leading" constant="50" id="lfl-9T-Kv1"/>
+                            <constraint firstItem="m3X-JN-niX" firstAttribute="top" secondItem="PRl-lT-y29" secondAttribute="bottom" id="nnl-8f-mEx"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Rtg-Vp-cbf"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="menuTableView" destination="vK6-81-z5P" id="ESX-dx-34R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mnW-cH-wKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="382" y="384"/>
+        </scene>
+        <!--Custom Navigation Controller-->
+        <scene sceneID="WsB-rb-6B8">
+            <objects>
+                <navigationController id="vfv-Fg-wmd" customClass="CustomNavigationController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8qB-RD-mut">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jpr-pG-Pvn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1098" y="-1351"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LoginVC" id="BYZ-38-t0r" customClass="HomeViewController" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="HomeVC" id="BYZ-38-t0r" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,8 +91,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AIO-RG-97F">
-                                <rect key="frame" x="0.0" y="64" width="600" height="100"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AIO-RG-97F">
+                                <rect key="frame" x="0.0" y="20" width="600" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGE-aq-QMF">
                                         <rect key="frame" x="20" y="39" width="40" height="21"/>
@@ -67,8 +141,8 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFB-ld-ED5" userLabel="PickerView">
-                                <rect key="frame" x="0.0" y="164" width="600" height="100"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hFB-ld-ED5" userLabel="PickerView">
+                                <rect key="frame" x="0.0" y="120" width="600" height="100"/>
                                 <subviews>
                                     <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="puH-qX-O70" userLabel="From Date Picker">
                                         <rect key="frame" x="0.0" y="-31" width="450" height="162"/>
@@ -106,6 +180,7 @@
                                         </variation>
                                         <connections>
                                             <action selector="updateToDate:" destination="BYZ-38-t0r" eventType="valueChanged" id="2pE-X3-7Kr"/>
+                                            <segue destination="oOn-C2-ZU4" kind="show" identifier="showEvent" id="zn2-Jx-2pU"/>
                                         </connections>
                                     </datePicker>
                                 </subviews>
@@ -120,6 +195,15 @@
                                     <constraint firstAttribute="centerY" secondItem="puH-qX-O70" secondAttribute="centerY" id="vCP-X7-Tu8"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgc-6Y-RYl">
+                                <rect key="frame" x="16" y="26" width="35" height="23"/>
+                                <state key="normal" image="menuButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleMenuTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XbK-2h-cIo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -131,37 +215,87 @@
                             <constraint firstItem="hFB-ld-ED5" firstAttribute="leading" secondItem="AIO-RG-97F" secondAttribute="leading" id="zjI-fa-8lz"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="5KG-O5-1Si">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="V7m-x8-bOq"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="PXg-2J-g6j"/>
                     </navigationItem>
                     <connections>
                         <outlet property="fromDateLabel" destination="WmS-9l-r3i" id="Tlj-8H-QTS"/>
                         <outlet property="fromDatePicker" destination="puH-qX-O70" id="DqU-4Q-dGY"/>
                         <outlet property="toDateLabel" destination="PDt-E9-Feg" id="Z2E-rV-p7C"/>
                         <outlet property="toDatePicker" destination="47T-BE-rgG" id="YXM-RV-9Y3"/>
+                        <segue destination="aRD-Q2-xua" kind="show" identifier="volunteerVC" id="H5F-Hc-Pze"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1094" y="190"/>
+            <point key="canvasLocation" x="1114" y="-1317"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="dJs-xc-QhA">
+        <!--Event View Controller-->
+        <scene sceneID="i4y-7W-v9x">
             <objects>
-                <navigationController storyboardIdentifier="MainNavigation" automaticallyAdjustsScrollViewInsets="NO" id="XEt-eu-1vL" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventVC" id="oOn-C2-ZU4" customClass="EventViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YQA-bB-r9n"/>
+                        <viewControllerLayoutGuide type="bottom" id="0RY-ju-ExH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cyn-Nq-hG9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Bl-Gg-pWS">
+                                <rect key="frame" x="153" y="128" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.7916452871447901" green="0.96755215451948717" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ore-Fy-uk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2038" y="-1275"/>
+        </scene>
+        <!--Volunteer View Controller-->
+        <scene sceneID="42D-Nb-hC3">
+            <objects>
+                <viewController storyboardIdentifier="VolunteerVC" id="aRD-Q2-xua" customClass="VolunteerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4ax-om-t06"/>
+                        <viewControllerLayoutGuide type="bottom" id="RSx-vB-QV7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cBM-sC-2fK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.71717814214009779" green="0.77845787257063193" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dE2-od-fjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2292" y="907"/>
+        </scene>
+        <!--Custom Navigation Controller-->
+        <scene sceneID="hxe-HF-5Iv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="980-et-qAv" customClass="CustomNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qnZ-eZ-wWW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eJG-oi-R5E">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8hZ-Pm-T74"/>
+                        <outlet property="delegate" destination="eJG-oi-R5E" id="byP-6J-loK"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hIx-LA-Bf8"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GjX-ED-5nm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="crL-3e-IIO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="168" y="-503"/>
+            <point key="canvasLocation" x="78" y="-1329"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="indian-cancer-society-logo" width="232" height="173"/>
+        <image name="menuButton" width="42" height="23"/>
+    </resources>
 </document>

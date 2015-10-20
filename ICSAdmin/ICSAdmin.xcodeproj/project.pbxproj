@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E23A6D91BD69D62006DC475 /* VolunteerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E23A6D81BD69D62006DC475 /* VolunteerViewController.m */; };
 		4E8B7EA11BD4EC9500BA1CDD /* Views in Resources */ = {isa = PBXBuildFile; fileRef = 4E8B7E9E1BD4EC9500BA1CDD /* Views */; };
 		4EDCEE5D1BD4D0F6000847BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCEE5C1BD4D0F6000847BA /* main.m */; };
 		4EDCEE691BD4D0F6000847BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EDCEE671BD4D0F6000847BA /* Main.storyboard */; };
@@ -24,6 +25,9 @@
 		4EDCEEA71BD502B3000847BA /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCEEA61BD502B3000847BA /* SignupViewController.m */; };
 		4EDCEEAA1BD51970000847BA /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCEEA91BD51970000847BA /* HomeViewController.m */; };
 		4EDCEEAD1BD61323000847BA /* NSDate+FormattedDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCEEAC1BD61323000847BA /* NSDate+FormattedDate.m */; };
+		4EDCEEB11BD62F8F000847BA /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCEEB01BD62F8F000847BA /* MenuViewController.m */; };
+		4EDCEEB41BD63CD5000847BA /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCEEB31BD63CD5000847BA /* CustomNavigationController.m */; };
+		4EDCEEB71BD68F87000847BA /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCEEB61BD68F87000847BA /* EventViewController.m */; };
 		7063553F9C5DE42103834F36 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDABF0611E0BC3B33599D66F /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		4916C51D39A56942E3C07901 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		4E23A6D71BD69D62006DC475 /* VolunteerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VolunteerViewController.h; path = Controllers/VolunteerViewController.h; sourceTree = "<group>"; };
+		4E23A6D81BD69D62006DC475 /* VolunteerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VolunteerViewController.m; path = Controllers/VolunteerViewController.m; sourceTree = "<group>"; };
 		4E8B7E9E1BD4EC9500BA1CDD /* Views */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Views; sourceTree = "<group>"; };
 		4EDCEE571BD4D0F6000847BA /* ICSAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICSAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EDCEE5B1BD4D0F6000847BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,6 +75,12 @@
 		4EDCEEA91BD51970000847BA /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = Controllers/HomeViewController.m; sourceTree = "<group>"; };
 		4EDCEEAB1BD61323000847BA /* NSDate+FormattedDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+FormattedDate.h"; path = "Categories/NSDate+FormattedDate.h"; sourceTree = "<group>"; };
 		4EDCEEAC1BD61323000847BA /* NSDate+FormattedDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+FormattedDate.m"; path = "Categories/NSDate+FormattedDate.m"; sourceTree = "<group>"; };
+		4EDCEEAF1BD62F8F000847BA /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = Controllers/MenuViewController.h; sourceTree = "<group>"; };
+		4EDCEEB01BD62F8F000847BA /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = Controllers/MenuViewController.m; sourceTree = "<group>"; };
+		4EDCEEB21BD63CD5000847BA /* CustomNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomNavigationController.h; path = Controllers/CustomNavigationController.h; sourceTree = "<group>"; };
+		4EDCEEB31BD63CD5000847BA /* CustomNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomNavigationController.m; path = Controllers/CustomNavigationController.m; sourceTree = "<group>"; };
+		4EDCEEB51BD68F87000847BA /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventViewController.h; path = Controllers/EventViewController.h; sourceTree = "<group>"; };
+		4EDCEEB61BD68F87000847BA /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventViewController.m; path = Controllers/EventViewController.m; sourceTree = "<group>"; };
 		9923BC1EF976AE8B23778228 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BDABF0611E0BC3B33599D66F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -189,6 +201,14 @@
 				4EDCEEA61BD502B3000847BA /* SignupViewController.m */,
 				4EDCEEA81BD51970000847BA /* HomeViewController.h */,
 				4EDCEEA91BD51970000847BA /* HomeViewController.m */,
+				4EDCEEAF1BD62F8F000847BA /* MenuViewController.h */,
+				4EDCEEB01BD62F8F000847BA /* MenuViewController.m */,
+				4EDCEEB21BD63CD5000847BA /* CustomNavigationController.h */,
+				4EDCEEB31BD63CD5000847BA /* CustomNavigationController.m */,
+				4EDCEEB51BD68F87000847BA /* EventViewController.h */,
+				4EDCEEB61BD68F87000847BA /* EventViewController.m */,
+				4E23A6D71BD69D62006DC475 /* VolunteerViewController.h */,
+				4E23A6D81BD69D62006DC475 /* VolunteerViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -372,15 +392,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E23A6D91BD69D62006DC475 /* VolunteerViewController.m in Sources */,
 				4EDCEE8F1BD4F527000847BA /* AppDelegate.m in Sources */,
 				4EDCEE5D1BD4D0F6000847BA /* main.m in Sources */,
 				4EDCEEA01BD4F8CF000847BA /* LoginViewController.m in Sources */,
+				4EDCEEB71BD68F87000847BA /* EventViewController.m in Sources */,
 				4EDCEEAA1BD51970000847BA /* HomeViewController.m in Sources */,
 				4EDCEEA71BD502B3000847BA /* SignupViewController.m in Sources */,
 				4EDCEE8C1BD4F363000847BA /* ICSModel.m in Sources */,
 				4EDCEE851BD4F1CB000847BA /* ICSAdmin.xcdatamodeld in Sources */,
+				4EDCEEB11BD62F8F000847BA /* MenuViewController.m in Sources */,
 				4EDCEE9C1BD4F85E000847BA /* TransitionAnimator.m in Sources */,
 				4EDCEE991BD4F855000847BA /* ControllerTransitionContext.m in Sources */,
+				4EDCEEB41BD63CD5000847BA /* CustomNavigationController.m in Sources */,
 				4EDCEE941BD4F839000847BA /* ContainerViewController.m in Sources */,
 				4EDCEEAD1BD61323000847BA /* NSDate+FormattedDate.m in Sources */,
 			);

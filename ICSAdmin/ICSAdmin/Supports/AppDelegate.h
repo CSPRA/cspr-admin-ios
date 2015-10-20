@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import <RUMSlidingMenuViewController.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) RUMSlidingMenuViewController *slidingMenuContainer;
+
 - (void)showHomeFlow;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;

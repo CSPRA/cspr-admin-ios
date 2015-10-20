@@ -1,5 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, "8.0"
-pod "AMSlideMenu", "~> 1.5.4"
+pod 'RUMSlidingMenu'
 pod 'XLForm', :git => 'https://github.com/xmartlabs/XLForm.git'
 
