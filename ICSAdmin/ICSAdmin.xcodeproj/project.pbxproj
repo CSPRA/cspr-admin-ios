@@ -22,6 +22,8 @@
 		4EDCEEA01BD4F8CF000847BA /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCEE9F1BD4F8CF000847BA /* LoginViewController.m */; };
 		4EDCEEA41BD4FA45000847BA /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EDCEEA31BD4FA45000847BA /* Login.storyboard */; };
 		4EDCEEA71BD502B3000847BA /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCEEA61BD502B3000847BA /* SignupViewController.m */; };
+		4EDCEEAA1BD51970000847BA /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCEEA91BD51970000847BA /* HomeViewController.m */; };
+		4EDCEEAD1BD61323000847BA /* NSDate+FormattedDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCEEAC1BD61323000847BA /* NSDate+FormattedDate.m */; };
 		7063553F9C5DE42103834F36 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDABF0611E0BC3B33599D66F /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +65,10 @@
 		4EDCEEA31BD4FA45000847BA /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		4EDCEEA51BD502B3000847BA /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignupViewController.h; path = Controllers/SignupViewController.h; sourceTree = "<group>"; };
 		4EDCEEA61BD502B3000847BA /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignupViewController.m; path = Controllers/SignupViewController.m; sourceTree = "<group>"; };
+		4EDCEEA81BD51970000847BA /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = Controllers/HomeViewController.h; sourceTree = "<group>"; };
+		4EDCEEA91BD51970000847BA /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = Controllers/HomeViewController.m; sourceTree = "<group>"; };
+		4EDCEEAB1BD61323000847BA /* NSDate+FormattedDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+FormattedDate.h"; path = "Categories/NSDate+FormattedDate.h"; sourceTree = "<group>"; };
+		4EDCEEAC1BD61323000847BA /* NSDate+FormattedDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+FormattedDate.m"; path = "Categories/NSDate+FormattedDate.m"; sourceTree = "<group>"; };
 		9923BC1EF976AE8B23778228 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BDABF0611E0BC3B33599D66F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -120,6 +126,7 @@
 				4EDCEE6A1BD4D0F6000847BA /* Images.xcassets */,
 				4EDCEE6C1BD4D0F6000847BA /* LaunchScreen.xib */,
 				4EDCEE5A1BD4D0F6000847BA /* Supporting Files */,
+				4EDCEEAE1BD6132A000847BA /* Categories */,
 			);
 			path = ICSAdmin;
 			sourceTree = "<group>";
@@ -180,8 +187,19 @@
 				4EDCEE9F1BD4F8CF000847BA /* LoginViewController.m */,
 				4EDCEEA51BD502B3000847BA /* SignupViewController.h */,
 				4EDCEEA61BD502B3000847BA /* SignupViewController.m */,
+				4EDCEEA81BD51970000847BA /* HomeViewController.h */,
+				4EDCEEA91BD51970000847BA /* HomeViewController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4EDCEEAE1BD6132A000847BA /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4EDCEEAB1BD61323000847BA /* NSDate+FormattedDate.h */,
+				4EDCEEAC1BD61323000847BA /* NSDate+FormattedDate.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		8333FDAC9B1DB74C98E50A39 /* Pods */ = {
@@ -357,12 +375,14 @@
 				4EDCEE8F1BD4F527000847BA /* AppDelegate.m in Sources */,
 				4EDCEE5D1BD4D0F6000847BA /* main.m in Sources */,
 				4EDCEEA01BD4F8CF000847BA /* LoginViewController.m in Sources */,
+				4EDCEEAA1BD51970000847BA /* HomeViewController.m in Sources */,
 				4EDCEEA71BD502B3000847BA /* SignupViewController.m in Sources */,
 				4EDCEE8C1BD4F363000847BA /* ICSModel.m in Sources */,
 				4EDCEE851BD4F1CB000847BA /* ICSAdmin.xcdatamodeld in Sources */,
 				4EDCEE9C1BD4F85E000847BA /* TransitionAnimator.m in Sources */,
 				4EDCEE991BD4F855000847BA /* ControllerTransitionContext.m in Sources */,
 				4EDCEE941BD4F839000847BA /* ContainerViewController.m in Sources */,
+				4EDCEEAD1BD61323000847BA /* NSDate+FormattedDate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
