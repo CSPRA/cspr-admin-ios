@@ -81,7 +81,6 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="HomeVC" id="BYZ-38-t0r" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -97,26 +96,26 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGE-aq-QMF">
                                         <rect key="frame" x="20" y="39" width="40" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12-05-2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WmS-9l-r3i" userLabel="FromDateLabel">
                                         <rect key="frame" x="80" y="40" width="90" height="21"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9v-37-snp">
                                         <rect key="frame" x="452" y="39" width="18" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12-05-2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDt-E9-Feg" userLabel="ToDataLabel">
                                         <rect key="frame" x="490" y="39" width="90" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -227,13 +226,14 @@
                         <segue destination="aRD-Q2-xua" kind="show" identifier="volunteerVC" id="H5F-Hc-Pze"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1114" y="-1317"/>
         </scene>
-        <!--Event View Controller-->
+        <!--Events View Controller-->
         <scene sceneID="i4y-7W-v9x">
             <objects>
-                <viewController storyboardIdentifier="EventVC" id="oOn-C2-ZU4" customClass="EventViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventVC" id="oOn-C2-ZU4" customClass="EventsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YQA-bB-r9n"/>
                         <viewControllerLayoutGuide type="bottom" id="0RY-ju-ExH"/>
@@ -251,10 +251,136 @@
                         </subviews>
                         <color key="backgroundColor" red="0.7916452871447901" green="0.96755215451948717" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="xXd-CL-kfQ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="CZ6-Tq-rtz">
+                            <connections>
+                                <segue destination="TYD-tI-5Nj" kind="show" id="jbs-uf-hts"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ore-Fy-uk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2038" y="-1275"/>
+        </scene>
+        <!--Create Event View Controller-->
+        <scene sceneID="D6H-FG-hgh">
+            <objects>
+                <viewController id="TYD-tI-5Nj" customClass="CreateEventViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0CK-BF-Crx"/>
+                        <viewControllerLayoutGuide type="bottom" id="Y85-oT-F7g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Ou-b3-6Tc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WTY-Vv-5Wj">
+                                <rect key="frame" x="100" y="105" width="400" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancer Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0q4-k3-Qfh">
+                                <rect key="frame" x="100" y="159" width="400" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTy-r8-nUy" userLabel="Choose CancerType">
+                                <rect key="frame" x="458" y="147" width="42" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="down">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="up"/>
+                                <connections>
+                                    <action selector="chooseCancerType:" destination="TYD-tI-5Nj" eventType="touchUpInside" id="7j6-Rk-hMA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose A Form" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCi-iM-CTV">
+                                <rect key="frame" x="100" y="209" width="400" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G7H-Zz-Ph2">
+                                <rect key="frame" x="458" y="197" width="42" height="42"/>
+                                <state key="normal" image="down">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="up"/>
+                                <connections>
+                                    <action selector="chooseDetectionForm:" destination="TYD-tI-5Nj" eventType="touchUpInside" id="ISg-Q1-2UW"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ao-Ny-zX8" userLabel="DateSelector">
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhg-ul-PGA" customClass="SelectorView">
+                                <rect key="frame" x="80" y="187" width="440" height="100"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="8oS-01-mp5"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Th7-Dq-0I4" userLabel="Form Selector View" customClass="SelectorView">
+                                <rect key="frame" x="80" y="237" width="440" height="100"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="EQN-9z-uUd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Th7-Dq-0I4" firstAttribute="width" secondItem="mCi-iM-CTV" secondAttribute="width" id="B9u-7n-nwd"/>
+                            <constraint firstItem="mhg-ul-PGA" firstAttribute="trailing" secondItem="0q4-k3-Qfh" secondAttribute="trailing" constant="20" id="Ohr-ta-W4i"/>
+                            <constraint firstItem="WTY-Vv-5Wj" firstAttribute="leading" secondItem="mCi-iM-CTV" secondAttribute="leading" id="Q2K-CI-epi"/>
+                            <constraint firstItem="WTY-Vv-5Wj" firstAttribute="width" secondItem="0q4-k3-Qfh" secondAttribute="width" id="SuL-Od-H1o"/>
+                            <constraint firstItem="WTY-Vv-5Wj" firstAttribute="top" secondItem="0CK-BF-Crx" secondAttribute="bottom" constant="41" id="WqT-Yb-uOw"/>
+                            <constraint firstItem="WTY-Vv-5Wj" firstAttribute="trailing" secondItem="pTy-r8-nUy" secondAttribute="trailing" id="XLr-gh-2Mo"/>
+                            <constraint firstItem="mhg-ul-PGA" firstAttribute="leading" secondItem="0q4-k3-Qfh" secondAttribute="leading" constant="-20" id="ZF3-Ae-IdF"/>
+                            <constraint firstItem="Th7-Dq-0I4" firstAttribute="trailing" secondItem="mCi-iM-CTV" secondAttribute="trailing" constant="20" id="Zek-6B-tVE"/>
+                            <constraint firstItem="WTY-Vv-5Wj" firstAttribute="width" secondItem="9Ou-b3-6Tc" secondAttribute="width" multiplier="1:1.5" id="ae6-ZV-2pa"/>
+                            <constraint firstItem="WTY-Vv-5Wj" firstAttribute="width" secondItem="mCi-iM-CTV" secondAttribute="width" id="dpf-ho-vmo"/>
+                            <constraint firstItem="WTY-Vv-5Wj" firstAttribute="trailing" secondItem="G7H-Zz-Ph2" secondAttribute="trailing" id="fbz-oq-Uyt"/>
+                            <constraint firstItem="mhg-ul-PGA" firstAttribute="top" secondItem="0q4-k3-Qfh" secondAttribute="bottom" constant="10" id="feS-4z-TW8"/>
+                            <constraint firstItem="WTY-Vv-5Wj" firstAttribute="width" secondItem="mCi-iM-CTV" secondAttribute="width" id="nhs-sP-CzN"/>
+                            <constraint firstItem="0q4-k3-Qfh" firstAttribute="top" secondItem="WTY-Vv-5Wj" secondAttribute="bottom" constant="24" id="oTb-Yt-H1q"/>
+                            <constraint firstItem="G7H-Zz-Ph2" firstAttribute="centerY" secondItem="mCi-iM-CTV" secondAttribute="centerY" id="oX4-8k-fYg"/>
+                            <constraint firstItem="Th7-Dq-0I4" firstAttribute="leading" secondItem="mCi-iM-CTV" secondAttribute="leading" constant="-20" id="tEI-1b-pzR"/>
+                            <constraint firstItem="mCi-iM-CTV" firstAttribute="top" secondItem="pTy-r8-nUy" secondAttribute="bottom" constant="20" id="uae-tA-Me6"/>
+                            <constraint firstAttribute="centerX" secondItem="WTY-Vv-5Wj" secondAttribute="centerX" id="v5n-5g-tfm"/>
+                            <constraint firstItem="WTY-Vv-5Wj" firstAttribute="leading" secondItem="0q4-k3-Qfh" secondAttribute="leading" id="vgD-wB-gEo"/>
+                            <constraint firstItem="pTy-r8-nUy" firstAttribute="centerY" secondItem="0q4-k3-Qfh" secondAttribute="centerY" id="x8y-6V-uWZ"/>
+                            <constraint firstItem="mCi-iM-CTV" firstAttribute="bottom" secondItem="Th7-Dq-0I4" secondAttribute="top" constant="-10" id="xa2-ZY-Chs"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="B9u-7n-nwd"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="dNW-sQ-nVC">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="a4N-7K-TyR"/>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="cancerTypeLabel" destination="0q4-k3-Qfh" id="Vib-oc-twd"/>
+                        <outlet property="formLabel" destination="mCi-iM-CTV" id="DXJ-ZP-oUc"/>
+                        <outlet property="formSelectorButton" destination="G7H-Zz-Ph2" id="bwC-yz-U9T"/>
+                        <outlet property="formSelectorView" destination="Th7-Dq-0I4" id="usf-HK-frJ"/>
+                        <outlet property="typeSelectorButton" destination="pTy-r8-nUy" id="w2W-kV-Q9N"/>
+                        <outlet property="typeSelectorView" destination="mhg-ul-PGA" id="Qeq-DI-N8R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lad-kh-FI3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2740" y="-1317"/>
         </scene>
         <!--Volunteer View Controller-->
         <scene sceneID="42D-Nb-hC3">
@@ -295,7 +421,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="down" width="42" height="42"/>
         <image name="indian-cancer-society-logo" width="232" height="173"/>
         <image name="menuButton" width="42" height="23"/>
+        <image name="up" width="42" height="42"/>
     </resources>
 </document>

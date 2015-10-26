@@ -6,8 +6,13 @@
 //  Copyright (c) 2015 GHCI-CSPR. All rights reserved.
 //
 
-#import "EventViewController.h"
+#import "EventsViewController.h"
 
-@implementation EventViewController
+@implementation EventsViewController
+
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  self.title = @"Events";
+}
 
 @end

@@ -20,11 +20,13 @@
 
 - (void)navigationController:(UINavigationController *)navigationController
 	  willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-  NSMutableArray *leftBtns = [[NSMutableArray alloc] init];
-  
-  UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menuButton"] style:UIBarButtonItemStylePlain target:self action:@selector(leftButtonPressed)];
-  [leftBtns addObject:leftBtn];
-  viewController.navigationItem.leftBarButtonItem = leftBtn;
+  if ([[navigationController.viewControllers objectAtIndex:0] isEqual:viewController]) {
+	NSMutableArray *leftBtns = [[NSMutableArray alloc] init];
+	
+	UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menuButton"] style:UIBarButtonItemStylePlain target:self action:@selector(leftButtonPressed)];
+	[leftBtns addObject:leftBtn];
+	  viewController.navigationItem.leftBarButtonItem = leftBtn;
+	}
 }
 
 -(void)leftButtonPressed {

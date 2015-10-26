@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EventViewController : UIViewController
+@interface EventsViewController : UIViewController
 
 @end

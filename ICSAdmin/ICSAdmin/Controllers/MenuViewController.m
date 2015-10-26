@@ -8,6 +8,7 @@
 
 #import "MenuViewController.h"
 #import "AppDelegate.h"
+#import "CustomNavigationController.h"
 
 @interface MenuViewController()<UITableViewDataSource,UITableViewDelegate>
 
@@ -48,28 +49,33 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-  UINavigationController *navVC = (UINavigationController *)appDelegate.slidingMenuContainer.mainViewController;
+  CustomNavigationController *navVC = (CustomNavigationController *)appDelegate.slidingMenuContainer.mainViewController;
 
-
+  UIViewController *selectedController;
   switch (indexPath.row) {
 	case 0: {
-	  UIViewController *vc =  [self.storyboard instantiateViewControllerWithIdentifier:@"HomeVC"];
-	  [navVC setViewControllers:@[vc]];
-	 	  break;
-	  }
+	  selectedController =  [self.storyboard instantiateViewControllerWithIdentifier:@"HomeVC"];
+	  break;
+	}
 	  
 	case 1: {
-	  UIViewController *vc =  [self.storyboard instantiateViewControllerWithIdentifier:@"EventVC"];
-	  [navVC setViewControllers:@[vc]];
+	  selectedController =  [self.storyboard instantiateViewControllerWithIdentifier:@"EventVC"];
 	  break;
 	}
+	
 	case 2: {
-	  UIViewController *vc =  [self.storyboard instantiateViewControllerWithIdentifier:@"VolunteerVC"];
-	  [navVC setViewControllers:@[vc]];
-
+	  selectedController =  [self.storyboard instantiateViewControllerWithIdentifier:@"VolunteerVC"];
+	  break;
 	}
+	
 	default:
 	  break;
-  }
+   }
+	
+	[navVC setViewControllers:@[selectedController]];
+  
+	if ([navVC.slidingDelegate respondsToSelector:@selector(toggleLeftMenu)]) {
+	  [navVC.slidingDelegate toggleLeftMenu];
+	}
 }
 @end

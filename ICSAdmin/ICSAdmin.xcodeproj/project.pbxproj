@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4E23A6D91BD69D62006DC475 /* VolunteerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E23A6D81BD69D62006DC475 /* VolunteerViewController.m */; };
-		4E8B7EA11BD4EC9500BA1CDD /* Views in Resources */ = {isa = PBXBuildFile; fileRef = 4E8B7E9E1BD4EC9500BA1CDD /* Views */; };
+		4E88B7EB1BDDFF7400560B14 /* CreateEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B7EA1BDDFF7400560B14 /* CreateEventViewController.m */; };
+		4E88B7EE1BDE1EAC00560B14 /* SelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B7ED1BDE1EAC00560B14 /* SelectorView.m */; };
 		4EDCEE5D1BD4D0F6000847BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCEE5C1BD4D0F6000847BA /* main.m */; };
 		4EDCEE691BD4D0F6000847BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EDCEE671BD4D0F6000847BA /* Main.storyboard */; };
 		4EDCEE6B1BD4D0F6000847BA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EDCEE6A1BD4D0F6000847BA /* Images.xcassets */; };
@@ -27,7 +28,7 @@
 		4EDCEEAD1BD61323000847BA /* NSDate+FormattedDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCEEAC1BD61323000847BA /* NSDate+FormattedDate.m */; };
 		4EDCEEB11BD62F8F000847BA /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCEEB01BD62F8F000847BA /* MenuViewController.m */; };
 		4EDCEEB41BD63CD5000847BA /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCEEB31BD63CD5000847BA /* CustomNavigationController.m */; };
-		4EDCEEB71BD68F87000847BA /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCEEB61BD68F87000847BA /* EventViewController.m */; };
+		4EDCEEB71BD68F87000847BA /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCEEB61BD68F87000847BA /* EventsViewController.m */; };
 		7063553F9C5DE42103834F36 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDABF0611E0BC3B33599D66F /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +46,10 @@
 		4916C51D39A56942E3C07901 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		4E23A6D71BD69D62006DC475 /* VolunteerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VolunteerViewController.h; path = Controllers/VolunteerViewController.h; sourceTree = "<group>"; };
 		4E23A6D81BD69D62006DC475 /* VolunteerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VolunteerViewController.m; path = Controllers/VolunteerViewController.m; sourceTree = "<group>"; };
-		4E8B7E9E1BD4EC9500BA1CDD /* Views */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Views; sourceTree = "<group>"; };
+		4E88B7E91BDDFF7400560B14 /* CreateEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateEventViewController.h; path = Controllers/CreateEventViewController.h; sourceTree = "<group>"; };
+		4E88B7EA1BDDFF7400560B14 /* CreateEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateEventViewController.m; path = Controllers/CreateEventViewController.m; sourceTree = "<group>"; };
+		4E88B7EC1BDE1EAC00560B14 /* SelectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectorView.h; path = Views/SelectorView.h; sourceTree = "<group>"; };
+		4E88B7ED1BDE1EAC00560B14 /* SelectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectorView.m; path = Views/SelectorView.m; sourceTree = "<group>"; };
 		4EDCEE571BD4D0F6000847BA /* ICSAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICSAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EDCEE5B1BD4D0F6000847BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EDCEE5C1BD4D0F6000847BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -79,8 +83,8 @@
 		4EDCEEB01BD62F8F000847BA /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = Controllers/MenuViewController.m; sourceTree = "<group>"; };
 		4EDCEEB21BD63CD5000847BA /* CustomNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomNavigationController.h; path = Controllers/CustomNavigationController.h; sourceTree = "<group>"; };
 		4EDCEEB31BD63CD5000847BA /* CustomNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomNavigationController.m; path = Controllers/CustomNavigationController.m; sourceTree = "<group>"; };
-		4EDCEEB51BD68F87000847BA /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventViewController.h; path = Controllers/EventViewController.h; sourceTree = "<group>"; };
-		4EDCEEB61BD68F87000847BA /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventViewController.m; path = Controllers/EventViewController.m; sourceTree = "<group>"; };
+		4EDCEEB51BD68F87000847BA /* EventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventsViewController.h; path = Controllers/EventsViewController.h; sourceTree = "<group>"; };
+		4EDCEEB61BD68F87000847BA /* EventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventsViewController.m; path = Controllers/EventsViewController.m; sourceTree = "<group>"; };
 		9923BC1EF976AE8B23778228 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BDABF0611E0BC3B33599D66F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -104,6 +108,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E88B7EF1BDE1EBE00560B14 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4E88B7EC1BDE1EAC00560B14 /* SelectorView.h */,
+				4E88B7ED1BDE1EAC00560B14 /* SelectorView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		4EDCEE4E1BD4D0F6000847BA = {
 			isa = PBXGroup;
 			children = (
@@ -132,13 +145,13 @@
 				4EDCEEA11BD4F8D7000847BA /* Controllers */,
 				4EDCEE9D1BD4F879000847BA /* Classes */,
 				4EDCEE891BD4F339000847BA /* Model */,
-				4E8B7E9E1BD4EC9500BA1CDD /* Views */,
 				4EDCEE671BD4D0F6000847BA /* Main.storyboard */,
 				4EDCEEA31BD4FA45000847BA /* Login.storyboard */,
 				4EDCEE6A1BD4D0F6000847BA /* Images.xcassets */,
 				4EDCEE6C1BD4D0F6000847BA /* LaunchScreen.xib */,
 				4EDCEE5A1BD4D0F6000847BA /* Supporting Files */,
 				4EDCEEAE1BD6132A000847BA /* Categories */,
+				4E88B7EF1BDE1EBE00560B14 /* Views */,
 			);
 			path = ICSAdmin;
 			sourceTree = "<group>";
@@ -205,10 +218,12 @@
 				4EDCEEB01BD62F8F000847BA /* MenuViewController.m */,
 				4EDCEEB21BD63CD5000847BA /* CustomNavigationController.h */,
 				4EDCEEB31BD63CD5000847BA /* CustomNavigationController.m */,
-				4EDCEEB51BD68F87000847BA /* EventViewController.h */,
-				4EDCEEB61BD68F87000847BA /* EventViewController.m */,
+				4EDCEEB51BD68F87000847BA /* EventsViewController.h */,
+				4EDCEEB61BD68F87000847BA /* EventsViewController.m */,
 				4E23A6D71BD69D62006DC475 /* VolunteerViewController.h */,
 				4E23A6D81BD69D62006DC475 /* VolunteerViewController.m */,
+				4E88B7E91BDDFF7400560B14 /* CreateEventViewController.h */,
+				4E88B7EA1BDDFF7400560B14 /* CreateEventViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -325,7 +340,6 @@
 				4EDCEE691BD4D0F6000847BA /* Main.storyboard in Resources */,
 				4EDCEEA41BD4FA45000847BA /* Login.storyboard in Resources */,
 				4EDCEE6E1BD4D0F6000847BA /* LaunchScreen.xib in Resources */,
-				4E8B7EA11BD4EC9500BA1CDD /* Views in Resources */,
 				4EDCEE6B1BD4D0F6000847BA /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,14 +410,16 @@
 				4EDCEE8F1BD4F527000847BA /* AppDelegate.m in Sources */,
 				4EDCEE5D1BD4D0F6000847BA /* main.m in Sources */,
 				4EDCEEA01BD4F8CF000847BA /* LoginViewController.m in Sources */,
-				4EDCEEB71BD68F87000847BA /* EventViewController.m in Sources */,
+				4EDCEEB71BD68F87000847BA /* EventsViewController.m in Sources */,
 				4EDCEEAA1BD51970000847BA /* HomeViewController.m in Sources */,
 				4EDCEEA71BD502B3000847BA /* SignupViewController.m in Sources */,
 				4EDCEE8C1BD4F363000847BA /* ICSModel.m in Sources */,
 				4EDCEE851BD4F1CB000847BA /* ICSAdmin.xcdatamodeld in Sources */,
 				4EDCEEB11BD62F8F000847BA /* MenuViewController.m in Sources */,
 				4EDCEE9C1BD4F85E000847BA /* TransitionAnimator.m in Sources */,
+				4E88B7EB1BDDFF7400560B14 /* CreateEventViewController.m in Sources */,
 				4EDCEE991BD4F855000847BA /* ControllerTransitionContext.m in Sources */,
+				4E88B7EE1BDE1EAC00560B14 /* SelectorView.m in Sources */,
 				4EDCEEB41BD63CD5000847BA /* CustomNavigationController.m in Sources */,
 				4EDCEE941BD4F839000847BA /* ContainerViewController.m in Sources */,
 				4EDCEEAD1BD61323000847BA /* NSDate+FormattedDate.m in Sources */,
