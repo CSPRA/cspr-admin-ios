@@ -9,6 +9,7 @@
 #import "CreateEventViewController.h"
 #import "SelectorView.h"
 #import <THDatePickerViewController.h>
+#import "NSDate+FormattedDate.h"
 
 @interface CreateEventViewController()<THDatePickerDelegate>
 @property (weak, nonatomic) IBOutlet SelectorView *typeSelectorView;
@@ -18,6 +19,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *cancerTypeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *formLabel;
 @property (strong, nonatomic) THDatePickerViewController *datePicker;
+@property (weak, nonatomic) IBOutlet UILabel *startDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *endDateLabel;
+@property (weak, nonatomic) IBOutlet UIButton *startDateButton;
+@property (weak, nonatomic) IBOutlet UIButton *endDateButton;
+@property (nonatomic, strong) UIButton *currentlySelectedButton;
 
 @end
 
@@ -77,14 +83,16 @@
   [self showCancerTypes:NO];
   [self showForms:shouldShow];
 }
-- (IBAction)didTapStartButton:(id)sender {
+- (IBAction)didTapStartButton:(UIButton *)sender {
+  sender.selected = YES;
+  self.currentlySelectedButton = sender;
   if(!self.datePicker)
 	self.datePicker = [THDatePickerViewController datePicker];
   self.datePicker.date = [NSDate date];
   self.datePicker.delegate = self;
   [self.datePicker setAllowClearDate:NO];
   [self.datePicker setClearAsToday:YES];
-  [self.datePicker setAutoCloseOnSelectDate:YES];
+//  [self.datePicker setAutoCloseOnSelectDate:YES];
   [self.datePicker setAllowSelectionOfSelectedDate:YES];
   [self.datePicker setDisableHistorySelection:YES];
   [self.datePicker setDisableFutureSelection:NO];
@@ -107,11 +115,24 @@
 																}];
 }
 -(void)datePickerDonePressed:(THDatePickerViewController *)datePicker {
-  NSLog(@"date");
+  if ([self.currentlySelectedButton isEqual:self.startDateButton]) {
+  	self.startDateLabel.text = [NSString stringWithFormat:@"%@",[self.datePicker.date formattedDateString]];
+  }
+  if ([self.currentlySelectedButton isEqual:self.endDateButton]) {
+	self.endDateLabel.text = [NSString stringWithFormat:@"%@",[self.datePicker.date formattedDateString]];
+  }
+ 
+  [self dismissSemiModalViewWithCompletion:^{
+	self.currentlySelectedButton.selected = NO;
+	self.currentlySelectedButton = nil;
+  }];
 }
 
 -(void)datePickerCancelPressed:(THDatePickerViewController *)datePicker {
-  [self.datePicker dismissViewControllerAnimated:YES completion:nil];
+  [self dismissSemiModalViewWithCompletion:^{
+	self.currentlySelectedButton.selected = NO;
+	self.currentlySelectedButton = nil;
+  }];
 }
 
 @end

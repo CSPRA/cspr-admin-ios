@@ -300,7 +300,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0q4-k3-Qfh">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0q4-k3-Qfh">
                                         <rect key="frame" x="100" y="67" width="438" height="30"/>
                                         <color key="backgroundColor" red="0.86600378789999999" green="0.86600378789999999" blue="0.86600378789999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -337,7 +337,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCi-iM-CTV">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCi-iM-CTV">
                                         <rect key="frame" x="100" y="118" width="438" height="30"/>
                                         <color key="backgroundColor" red="0.86600378789999999" green="0.86600378789999999" blue="0.86600378789999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -354,7 +354,7 @@
                                             <action selector="chooseDetectionForm:" destination="TYD-tI-5Nj" eventType="touchUpInside" id="ISg-Q1-2UW"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yV-jr-x2O">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yV-jr-x2O">
                                         <rect key="frame" x="100" y="169" width="438" height="30"/>
                                         <color key="backgroundColor" red="0.86600378789999999" green="0.86600378789999999" blue="0.86600378789999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -383,7 +383,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWK-LS-5XA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWK-LS-5XA">
                                         <rect key="frame" x="100" y="220" width="438" height="30"/>
                                         <color key="backgroundColor" red="0.86600378789999999" green="0.86600378789999999" blue="0.86600378789999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -396,6 +396,9 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="selected" image="up"/>
+                                        <connections>
+                                            <action selector="didTapStartButton:" destination="TYD-tI-5Nj" eventType="touchUpInside" id="wY9-TV-YbE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -492,9 +495,13 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cancerTypeLabel" destination="0q4-k3-Qfh" id="Vib-oc-twd"/>
+                        <outlet property="endDateButton" destination="Z59-yc-VEh" id="ffJ-nz-0Xc"/>
+                        <outlet property="endDateLabel" destination="GWK-LS-5XA" id="wyJ-NW-L5P"/>
                         <outlet property="formLabel" destination="mCi-iM-CTV" id="DXJ-ZP-oUc"/>
                         <outlet property="formSelectorButton" destination="G7H-Zz-Ph2" id="bwC-yz-U9T"/>
                         <outlet property="formSelectorView" destination="Th7-Dq-0I4" id="usf-HK-frJ"/>
+                        <outlet property="startDateButton" destination="48c-Uy-6c9" id="aAH-i3-90i"/>
+                        <outlet property="startDateLabel" destination="1yV-jr-x2O" id="pZM-hN-HIj"/>
                         <outlet property="typeSelectorButton" destination="pTy-r8-nUy" id="w2W-kV-Q9N"/>
                         <outlet property="typeSelectorView" destination="mhg-ul-PGA" id="Qeq-DI-N8R"/>
                     </connections>
