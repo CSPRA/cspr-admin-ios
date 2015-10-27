@@ -33,7 +33,7 @@
   [super viewDidLoad];
   self.title = @"Create Event";
   NSArray *types = @[@"Throat",@"Skin",@"Mouth"];
-  NSArray *forms = @[@"Short Screening Form",@"Detailed Screening Form"];
+  NSArray *forms = @[@"Short Screening Form",@"Detailed Screening Form",@"Create New Form"];
 
   [self.typeSelectorView configureWithDataSource:types
    withCellTapHandler:^(NSIndexPath *indexPath){
@@ -43,11 +43,15 @@
   withDetailTapHandler:nil];
   [self.formSelectorView configureWithDataSource:forms
   withCellTapHandler:^(NSIndexPath *indexPath){
-	self.formLabel.text = [forms objectAtIndex:indexPath.row];
+	if (indexPath.row == forms.count-1) {
+	  [self performSegueWithIdentifier:@"formToEvent" sender:self];
+	}else {
+	  self.formLabel.text = [forms objectAtIndex:indexPath.row];
+	}
 //	[self showForms:NO];
   }
  withDetailTapHandler:^(NSIndexPath *indexPath) {
-	NSLog(@"tapped index = %d",indexPath.row);
+	NSLog(@"tapped index = %ld",(long)indexPath.row);
 	
   }];
 }
