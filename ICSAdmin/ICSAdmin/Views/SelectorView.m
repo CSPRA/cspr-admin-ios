@@ -29,6 +29,7 @@
   self.tableView.delegate = self;
   self.tableView.dataSource = self;
   self.tableView.backgroundColor = [UIColor colorWithRed:216/255.0 green:224/255.0 blue:227/255.0 alpha:1.0];
+
   self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
   [self configureTableView];
 }

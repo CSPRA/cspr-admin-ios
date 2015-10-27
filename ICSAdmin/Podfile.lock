@@ -1,9 +1,13 @@
 PODS:
+  - KNSemiModalViewController_hons82 (0.4.2)
   - RUMSlidingMenu (1.1.0)
+  - THCalendarDatePicker (1.2.4):
+    - KNSemiModalViewController_hons82 (~> 0.4.2)
   - XLForm (3.0.2)
 
 DEPENDENCIES:
   - RUMSlidingMenu
+  - THCalendarDatePicker (~> 1.2.4)
   - XLForm (from `https://github.com/xmartlabs/XLForm.git`)
 
 EXTERNAL SOURCES:
@@ -16,7 +20,9 @@ CHECKOUT OPTIONS:
     :git: https://github.com/xmartlabs/XLForm.git
 
 SPEC CHECKSUMS:
+  KNSemiModalViewController_hons82: 14829870f13aeb056248b6de77f00135204f8c42
   RUMSlidingMenu: d4ddd0d5043afde464fedfd19af1ec150e457d49
+  THCalendarDatePicker: c128a70a7b5ad01efabc6dca856f20b178da4c1d
   XLForm: 7817ce29f3f259186e837bb7309ac7e5b7e9b883
 
 COCOAPODS: 0.39.0

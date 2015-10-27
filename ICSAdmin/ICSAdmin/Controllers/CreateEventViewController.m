@@ -8,14 +8,16 @@
 
 #import "CreateEventViewController.h"
 #import "SelectorView.h"
+#import <THDatePickerViewController.h>
 
-@interface CreateEventViewController()
+@interface CreateEventViewController()<THDatePickerDelegate>
 @property (weak, nonatomic) IBOutlet SelectorView *typeSelectorView;
 @property (weak, nonatomic) IBOutlet SelectorView *formSelectorView;
 @property (weak, nonatomic) IBOutlet UIButton *typeSelectorButton;
 @property (weak, nonatomic) IBOutlet UIButton *formSelectorButton;
 @property (weak, nonatomic) IBOutlet UILabel *cancerTypeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *formLabel;
+@property (strong, nonatomic) THDatePickerViewController *datePicker;
 
 @end
 
@@ -30,13 +32,13 @@
   [self.typeSelectorView configureWithDataSource:types
    withCellTapHandler:^(NSIndexPath *indexPath){
 	 self.cancerTypeLabel.text = [types objectAtIndex:indexPath.row];
-	 [self showCancerTypes:NO];
+//	 [self showCancerTypes:NO];
    }
   withDetailTapHandler:nil];
   [self.formSelectorView configureWithDataSource:forms
   withCellTapHandler:^(NSIndexPath *indexPath){
 	self.formLabel.text = [forms objectAtIndex:indexPath.row];
-	[self showForms:NO];
+//	[self showForms:NO];
   }
  withDetailTapHandler:^(NSIndexPath *indexPath) {
 	NSLog(@"tapped index = %d",indexPath.row);
@@ -51,20 +53,65 @@
 }
 
 - (void)showCancerTypes:(BOOL)show {
-
-	self.typeSelectorView.hidden = !show;
+  [UIView animateWithDuration:0.5 animations:^{
+	self.typeSelectorView.alpha = show ? 1: 0;
 	self.typeSelectorButton.selected = show;
+  } completion:^(BOOL finished) {
+	
+  }];
+  
 }
 
 - (void)showForms:(BOOL)show {
-  self.formSelectorButton.selected = show;
-  self.formSelectorView.hidden = !show;
+  [UIView animateWithDuration:0.5 animations:^{
+	self.formSelectorButton.selected = show;
+	self.formSelectorView.alpha = show ? 1: 0;
+  }completion:^(BOOL finished) {
+	
+  }];
+  
 }
 
 - (IBAction)chooseDetectionForm:(UIButton *)sender {
   BOOL shouldShow = !sender.selected;
   [self showCancerTypes:NO];
   [self showForms:shouldShow];
+}
+- (IBAction)didTapStartButton:(id)sender {
+  if(!self.datePicker)
+	self.datePicker = [THDatePickerViewController datePicker];
+  self.datePicker.date = [NSDate date];
+  self.datePicker.delegate = self;
+  [self.datePicker setAllowClearDate:NO];
+  [self.datePicker setClearAsToday:YES];
+  [self.datePicker setAutoCloseOnSelectDate:YES];
+  [self.datePicker setAllowSelectionOfSelectedDate:YES];
+  [self.datePicker setDisableHistorySelection:YES];
+  [self.datePicker setDisableFutureSelection:NO];
+//  [self.datePicker setSelectedBackgroundColor:[UIColor colorWithRed:125/255.0 green:208/255.0 blue:0/255.0 alpha:1.0]];
+  [self.datePicker setSelectedBackgroundColor:[UIColor colorWithRed:149/255.0 green:212/255.0 blue:237/255.0 alpha:1.0]];
+
+  [self.datePicker setCurrentDateColor:[UIColor colorWithRed:242/255.0 green:121/255.0 blue:53/255.0 alpha:1.0]];
+  
+  [self.datePicker setDateHasItemsCallback:^BOOL(NSDate *date) {
+	int tmp = (arc4random() % 30)+1;
+	if(tmp % 5 == 0)
+	  return YES;
+	return NO;
+  }];
+  //[self.datePicker slideUpInView:self.view withModalColor:[UIColor lightGrayColor]];
+  [self presentSemiViewController:self.datePicker withOptions:@{
+																KNSemiModalOptionKeys.pushParentBack    : @(NO),
+																KNSemiModalOptionKeys.animationDuration : @(0.5),
+																KNSemiModalOptionKeys.shadowOpacity     : @(0.3),
+																}];
+}
+-(void)datePickerDonePressed:(THDatePickerViewController *)datePicker {
+  NSLog(@"date");
+}
+
+-(void)datePickerCancelPressed:(THDatePickerViewController *)datePicker {
+  [self.datePicker dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
