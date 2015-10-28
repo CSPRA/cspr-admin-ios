@@ -10,6 +10,9 @@
 		4E23A6D91BD69D62006DC475 /* VolunteerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E23A6D81BD69D62006DC475 /* VolunteerViewController.m */; };
 		4E2A876C1BDFC1D800F553B2 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A876B1BDFC1D800F553B2 /* SearchViewController.m */; settings = {ASSET_TAGS = (); }; };
 		4E2A87721BE0A1DF00F553B2 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A87711BE0A1DF00F553B2 /* CoreDataManager.m */; settings = {ASSET_TAGS = (); }; };
+		4E2A87751BE0A92000F553B2 /* APIInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A87741BE0A92000F553B2 /* APIInterface.m */; settings = {ASSET_TAGS = (); }; };
+		4E2A87791BE0A9E800F553B2 /* APIError.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A87781BE0A9E800F553B2 /* APIError.m */; settings = {ASSET_TAGS = (); }; };
+		4E2A877E1BE0BEFF00F553B2 /* AdminAPIInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A877D1BE0BEFF00F553B2 /* AdminAPIInterface.m */; settings = {ASSET_TAGS = (); }; };
 		4E88B7EB1BDDFF7400560B14 /* CreateEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B7EA1BDDFF7400560B14 /* CreateEventViewController.m */; };
 		4E88B7EE1BDE1EAC00560B14 /* SelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B7ED1BDE1EAC00560B14 /* SelectorView.m */; };
 		4EDCEE5D1BD4D0F6000847BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCEE5C1BD4D0F6000847BA /* main.m */; };
@@ -55,6 +58,15 @@
 		4E2A876E1BE09DD600F553B2 /* RestkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestkitAdditions.h; path = API/RestkitAdditions.h; sourceTree = "<group>"; };
 		4E2A87701BE0A1DF00F553B2 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataManager.h; path = Model/CoreDataManager.h; sourceTree = "<group>"; };
 		4E2A87711BE0A1DF00F553B2 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataManager.m; path = Model/CoreDataManager.m; sourceTree = "<group>"; };
+		4E2A87731BE0A92000F553B2 /* APIInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIInterface.h; path = API/APIInterface.h; sourceTree = "<group>"; };
+		4E2A87741BE0A92000F553B2 /* APIInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIInterface.m; path = API/APIInterface.m; sourceTree = "<group>"; };
+		4E2A87761BE0A9AB00F553B2 /* APIErrorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIErrorProtocol.h; path = API/APIErrorProtocol.h; sourceTree = "<group>"; };
+		4E2A87771BE0A9E800F553B2 /* APIError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIError.h; path = API/APIError.h; sourceTree = "<group>"; };
+		4E2A87781BE0A9E800F553B2 /* APIError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIError.m; path = API/APIError.m; sourceTree = "<group>"; };
+		4E2A877A1BE0B58D00F553B2 /* ICSAdmin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ICSAdmin-Prefix.pch"; sourceTree = "<group>"; };
+		4E2A877B1BE0BE6B00F553B2 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		4E2A877C1BE0BEFF00F553B2 /* AdminAPIInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdminAPIInterface.h; path = API/AdminAPIInterface.h; sourceTree = "<group>"; };
+		4E2A877D1BE0BEFF00F553B2 /* AdminAPIInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdminAPIInterface.m; path = API/AdminAPIInterface.m; sourceTree = "<group>"; };
 		4E88B7E91BDDFF7400560B14 /* CreateEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateEventViewController.h; path = Controllers/CreateEventViewController.h; sourceTree = "<group>"; };
 		4E88B7EA1BDDFF7400560B14 /* CreateEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateEventViewController.m; path = Controllers/CreateEventViewController.m; sourceTree = "<group>"; };
 		4E88B7EC1BDE1EAC00560B14 /* SelectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectorView.h; path = Views/SelectorView.h; sourceTree = "<group>"; };
@@ -125,6 +137,13 @@
 			isa = PBXGroup;
 			children = (
 				4E2A876E1BE09DD600F553B2 /* RestkitAdditions.h */,
+				4E2A87731BE0A92000F553B2 /* APIInterface.h */,
+				4E2A87741BE0A92000F553B2 /* APIInterface.m */,
+				4E2A87761BE0A9AB00F553B2 /* APIErrorProtocol.h */,
+				4E2A87771BE0A9E800F553B2 /* APIError.h */,
+				4E2A87781BE0A9E800F553B2 /* APIError.m */,
+				4E2A877C1BE0BEFF00F553B2 /* AdminAPIInterface.h */,
+				4E2A877D1BE0BEFF00F553B2 /* AdminAPIInterface.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -174,7 +193,6 @@
 				4EDCEEAE1BD6132A000847BA /* Categories */,
 				4E88B7EF1BDE1EBE00560B14 /* Views */,
 				4E2A876F1BE09DDA00F553B2 /* API */,
-				4E2A877A1BE0B58D00F553B2 /* ICSAdmin-Prefix.pch */,
 			);
 			path = ICSAdmin;
 			sourceTree = "<group>";
@@ -182,8 +200,10 @@
 		4EDCEE5A1BD4D0F6000847BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4E2A877A1BE0B58D00F553B2 /* ICSAdmin-Prefix.pch */,
 				4EDCEE5B1BD4D0F6000847BA /* Info.plist */,
 				4EDCEE5C1BD4D0F6000847BA /* main.m */,
+				4E2A877B1BE0BE6B00F553B2 /* Constants.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -447,13 +467,16 @@
 				4EDCEEAA1BD51970000847BA /* HomeViewController.m in Sources */,
 				4EDCEEA71BD502B3000847BA /* SignupViewController.m in Sources */,
 				4EDCEE8C1BD4F363000847BA /* ICSModel.m in Sources */,
+				4E2A877E1BE0BEFF00F553B2 /* AdminAPIInterface.m in Sources */,
 				4EDCEE851BD4F1CB000847BA /* ICSAdmin.xcdatamodeld in Sources */,
 				4EDCEEB11BD62F8F000847BA /* MenuViewController.m in Sources */,
 				4EDCEE9C1BD4F85E000847BA /* TransitionAnimator.m in Sources */,
 				4E88B7EB1BDDFF7400560B14 /* CreateEventViewController.m in Sources */,
 				4EDCEE991BD4F855000847BA /* ControllerTransitionContext.m in Sources */,
 				4E2A87721BE0A1DF00F553B2 /* CoreDataManager.m in Sources */,
+				4E2A87751BE0A92000F553B2 /* APIInterface.m in Sources */,
 				4EFE5DD51BDF75690059C645 /* FormViewController.m in Sources */,
+				4E2A87791BE0A9E800F553B2 /* APIError.m in Sources */,
 				4E88B7EE1BDE1EAC00560B14 /* SelectorView.m in Sources */,
 				4EDCEEB41BD63CD5000847BA /* CustomNavigationController.m in Sources */,
 				4EDCEE941BD4F839000847BA /* ContainerViewController.m in Sources */,

@@ -7,7 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "APIErrorProtocol.h"
 
-@interface APIError : NSObject
+extern NSString * kDefaultAPIErrorDomain;
+extern NSInteger  kDefaultAPIErrorCode;
+
+@interface APIError : NSObject<APIErrorProtocol>
+
+- (id)initWithDomain:(NSString *)domain
+			 message:(NSString *)message
+			 andCode:(NSInteger)code;
+
+- (id)initWithError:(NSError *)error;
+
++ (APIError *)apiErrorWithError:(NSError *)error;
+
+- (NSString *)description;
 
 @end
