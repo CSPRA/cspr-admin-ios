@@ -94,206 +94,17 @@
 																   keyPath:@"result"
 															   statusCodes:self.successSet];
   [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  /*
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userMapping
+  
+
+  RKObjectMapping *errorMapping = [RKObjectMapping mappingForClass:[APIError class]];
+  [errorMapping mappingForDestinationKeyPath:@"error"];
+  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:errorMapping
 																	method:RKRequestMethodPOST
-															   pathPattern:kAPIPathAvatarUpload
-																   keyPath:nil
-															   statusCodes:self.successSet];
+															   pathPattern:kAPIPathLogin
+																   keyPath:@"error"
+															   statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassClientError)];
+
   [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userMapping
-																	method:RKRequestMethodPATCH
-															   pathPattern:kAPIPathUserProfile
-																   keyPath:nil
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  //Groups Mapping
-  RKEntityMapping *groupMapping = [Group restkitObjectMappingForStore:self.objectStore];
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:groupMapping
-																	method:RKRequestMethodGET
-															   pathPattern:kApiPathGroupSearch
-																   keyPath:@"results"
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  groupMapping = [Group restkitObjectMappingForStore:self.objectStore];
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:groupMapping
-																	method:RKRequestMethodGET
-															   pathPattern:kApiPathUserGroups
-																   keyPath:@"results"
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  groupMapping = [Group restkitObjectMappingForStore:self.objectStore];
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:groupMapping
-																	method:RKRequestMethodGET
-															   pathPattern:kAPiPathGroupEveryone
-																   keyPath:nil
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  groupMapping = [Group restkitObjectMappingForStore:self.objectStore];
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:groupMapping
-																	method:RKRequestMethodGET
-															   pathPattern:kAPiPathGroupDetailPattern
-																   keyPath:nil
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  
-  RKEntityMapping *userProfileMapping = [Profile restkitObjectMappingForStore:self.objectStore];
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userProfileMapping
-																	method:RKRequestMethodPOST
-															   pathPattern:kApiPathGroupJoinPattern
-																   keyPath:nil
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userProfileMapping
-																	method:RKRequestMethodPATCH
-															   pathPattern:kApiPathGroupUserProfileUpdatePattern
-																   keyPath:nil
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userProfileMapping
-																	method:RKRequestMethodGET
-															   pathPattern:kApiPathGroupUserProfilesPattern
-																   keyPath:@"results"
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userProfileMapping
-																	method:RKRequestMethodPOST
-															   pathPattern:kAPiPathGroupEveryoneJoin
-																   keyPath:nil
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userProfileMapping
-																	method:RKRequestMethodPOST
-															   pathPattern:kAPIPathBlockUserPattern
-																   keyPath:nil
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userProfileMapping
-																	method:RKRequestMethodPOST
-															   pathPattern:kAPIPathUnBlockUserPattern
-																   keyPath:nil
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userProfileMapping
-																	method:RKRequestMethodGET
-															   pathPattern:kAPiPathPatternMootUsers
-																   keyPath:@"results"
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userProfileMapping
-																	method:RKRequestMethodGET
-															   pathPattern:kAPIPathFetchUserProfilePattern
-																   keyPath:nil
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  RKEntityMapping *mootMapping = [Moot restkitObjectMappingForStore:self.objectStore];
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mootMapping
-																	method:RKRequestMethodPOST
-															   pathPattern:kApiPathGroupCreateMootPattern
-																   keyPath:nil
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  mootMapping = [Moot restkitObjectMappingForStore:self.objectStore];
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mootMapping
-																	method:RKRequestMethodPOST
-															   pathPattern:kAPIPathPrivateChatPattern
-																   keyPath:nil
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  mootMapping = [Moot restkitObjectMappingForStore:self.objectStore];
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mootMapping
-																	method:RKRequestMethodGET
-															   pathPattern:kAPiPathGroupMootsPattern
-																   keyPath:@"results"
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  RKObjectMapping *paginatorMapping = [MTPaginator restkitObjectMapping];
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginatorMapping
-																	method:RKRequestMethodGET
-															   pathPattern:kAPiPathGroupMootsPattern
-																   keyPath:nil
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginatorMapping
-																	method:RKRequestMethodGET
-															   pathPattern:kApiPathGroupUserProfilesPattern
-																   keyPath:nil
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  mootMapping = [Moot restkitObjectMappingForStore:self.objectStore];
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mootMapping
-																	method:RKRequestMethodGET
-															   pathPattern:kAPIPathInbox
-																   keyPath:@"results"
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginatorMapping
-																	method:RKRequestMethodGET
-															   pathPattern:kAPIPathInbox
-																   keyPath:nil
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  mootMapping = [Moot restkitObjectMappingForStore:self.objectStore];
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mootMapping
-																	method:RKRequestMethodGET
-															   pathPattern:kAPiPathGetMootDetailsPattern
-																   keyPath:nil
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  RKObjectMapping *chatMessageMapping = [MTChatMessage restkitObjectMapping];
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:chatMessageMapping
-																	method:RKRequestMethodGET
-															   pathPattern:kAPIPathMootMessagesPattern
-																   keyPath:@"results"
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  RKObjectMapping *announcementMapping = [Announcement restkitObjectMappingForStore:self.objectStore];
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:announcementMapping
-																	method:RKRequestMethodGET
-															   pathPattern:kAPIPathAnnouncements
-																   keyPath:@"results"
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  paginatorMapping = [MTPaginator restkitObjectMapping];
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginatorMapping
-																	method:RKRequestMethodGET
-															   pathPattern:kAPIPathAnnouncements
-																   keyPath:nil
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-  
-  paginatorMapping = [MTPaginator restkitObjectMapping];
-  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginatorMapping
-																	method:RKRequestMethodGET
-															   pathPattern:kApiPathGroupSearch
-																   keyPath:nil
-															   statusCodes:self.successSet];
-  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];*/
-  
 }
 
 - (NSManagedObjectContext *)managedObjectContext {
@@ -305,16 +116,18 @@
 								 andError:(NSError *)error  {
   __block NSString * domain = [response objectForKey:@"_error_type"];
   __block NSString *message = [response objectForKey:@"_error_message"];
-  
+  __block NSInteger statusCode = 200;
   if (!message) {
-	[response enumerateKeysAndObjectsUsingBlock:^(NSString* key, NSArray* obj, BOOL *stop) {
+	[response enumerateKeysAndObjectsUsingBlock:^(NSString* key, NSDictionary* obj, BOOL *stop) {
 	  domain = key;
-	  message = [obj firstObject];
+//	  message = [obj firstObject];
+	  message = [obj objectForKey:@"message"];
+	  statusCode = [[obj objectForKey:@"code"]integerValue];
 	  *stop = YES;
 	}];
   }
   
-  NSInteger statusCode = operation.response.statusCode;
+//  NSInteger statusCode = operation.response.statusCode;
   APIError *apiError;
   if (domain && message) {
 	apiError = [[APIError alloc] initWithDomain:domain
