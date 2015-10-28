@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E23A6D91BD69D62006DC475 /* VolunteerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E23A6D81BD69D62006DC475 /* VolunteerViewController.m */; };
+		4E2A876C1BDFC1D800F553B2 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A876B1BDFC1D800F553B2 /* SearchViewController.m */; settings = {ASSET_TAGS = (); }; };
 		4E88B7EB1BDDFF7400560B14 /* CreateEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B7EA1BDDFF7400560B14 /* CreateEventViewController.m */; };
 		4E88B7EE1BDE1EAC00560B14 /* SelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B7ED1BDE1EAC00560B14 /* SelectorView.m */; };
 		4EDCEE5D1BD4D0F6000847BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCEE5C1BD4D0F6000847BA /* main.m */; };
@@ -48,6 +49,8 @@
 		4916C51D39A56942E3C07901 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		4E23A6D71BD69D62006DC475 /* VolunteerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VolunteerViewController.h; path = Controllers/VolunteerViewController.h; sourceTree = "<group>"; };
 		4E23A6D81BD69D62006DC475 /* VolunteerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VolunteerViewController.m; path = Controllers/VolunteerViewController.m; sourceTree = "<group>"; };
+		4E2A876A1BDFC1D800F553B2 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = Controllers/SearchViewController.h; sourceTree = "<group>"; };
+		4E2A876B1BDFC1D800F553B2 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = Controllers/SearchViewController.m; sourceTree = "<group>"; };
 		4E88B7E91BDDFF7400560B14 /* CreateEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateEventViewController.h; path = Controllers/CreateEventViewController.h; sourceTree = "<group>"; };
 		4E88B7EA1BDDFF7400560B14 /* CreateEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateEventViewController.m; path = Controllers/CreateEventViewController.m; sourceTree = "<group>"; };
 		4E88B7EC1BDE1EAC00560B14 /* SelectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectorView.h; path = Views/SelectorView.h; sourceTree = "<group>"; };
@@ -234,6 +237,8 @@
 				4EFE5DD11BDF6BF90059C645 /* QuestionnaireViewController.m */,
 				4EFE5DD31BDF75690059C645 /* FormViewController.h */,
 				4EFE5DD41BDF75690059C645 /* FormViewController.m */,
+				4E2A876A1BDFC1D800F553B2 /* SearchViewController.h */,
+				4E2A876B1BDFC1D800F553B2 /* SearchViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -418,6 +423,7 @@
 			files = (
 				4E23A6D91BD69D62006DC475 /* VolunteerViewController.m in Sources */,
 				4EDCEE8F1BD4F527000847BA /* AppDelegate.m in Sources */,
+				4E2A876C1BDFC1D800F553B2 /* SearchViewController.m in Sources */,
 				4EDCEE5D1BD4D0F6000847BA /* main.m in Sources */,
 				4EDCEEA01BD4F8CF000847BA /* LoginViewController.m in Sources */,
 				4EFE5DD21BDF6BF90059C645 /* QuestionnaireViewController.m in Sources */,
