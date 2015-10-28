@@ -3,6 +3,7 @@ platform :ios, "8.0"
 pod 'RUMSlidingMenu'
 pod 'XLForm', :git => 'https://github.com/xmartlabs/XLForm.git'
 pod 'THCalendarDatePicker', '~> 1.2.4'
+pod 'Reachability',  '~> 3.1.1'
 pod 'RestKit', '~> 0.24.0'
 
 

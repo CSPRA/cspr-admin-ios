@@ -3,6 +3,7 @@ PODS:
   - ISO8601DateFormatterValueTransformer (0.6.1):
     - RKValueTransformers (~> 1.1.0)
   - KNSemiModalViewController_hons82 (0.4.2)
+  - Reachability (3.1.1)
   - RestKit (0.24.1):
     - RestKit/Core (= 0.24.1)
   - RestKit/Core (0.24.1):
@@ -31,6 +32,7 @@ PODS:
   - XLForm (3.0.2)
 
 DEPENDENCIES:
+  - Reachability (~> 3.1.1)
   - RestKit (~> 0.24.0)
   - RUMSlidingMenu
   - THCalendarDatePicker (~> 1.2.4)
@@ -49,6 +51,7 @@ SPEC CHECKSUMS:
   AFNetworking: cf8e418e16f0c9c7e5c3150d019a3c679d015018
   ISO8601DateFormatterValueTransformer: 52da467d6ec899d6aedda8e48280ac92e8ee97e6
   KNSemiModalViewController_hons82: 14829870f13aeb056248b6de77f00135204f8c42
+  Reachability: dd9aa4fb6667b9f787690a74f53cb7634ce99893
   RestKit: 1987b5efef289c6b27bd980714d6ca48d3871b78
   RKValueTransformers: 66ac5e4f077fdbe3496e792d89eeff4c3eb67701
   RUMSlidingMenu: d4ddd0d5043afde464fedfd19af1ec150e457d49
