@@ -26,7 +26,7 @@
 
 - (void)configureDataSource {
   self.menuArray = [NSArray arrayWithObjects:@"Dashboard",@"Create Event", @"Approve Volunteers",@"Approve Doctors",
-  @"Assign Volunteers",@"Assign Doctors",@"Profile",@"Logout", nil];
+  @"Assign Volunteers",@"Assign Doctors",@"Profile", nil];
 }
 
 #pragma mark - UITableViewDataSource methods
@@ -68,14 +68,32 @@
 	  break;
 	}
 	
+	case 3: {
+	  break;
+	}
+	
+	case 4:{
+	  break;
+	}
+	case 5: {
+	  break;
+	}
+	case 6: {
+	  selectedController = [self.storyboard instantiateViewControllerWithIdentifier:@"profileVC"];
+	  break;
+	}
+	
 	default:
 	  break;
    }
 	
-	[navVC setViewControllers:@[selectedController]];
-  
-	if ([navVC.slidingDelegate respondsToSelector:@selector(toggleLeftMenu)]) {
-	  [navVC.slidingDelegate toggleLeftMenu];
+	if (selectedController) {
+	  [navVC setViewControllers:@[selectedController]];
+	
+	  if ([navVC.slidingDelegate respondsToSelector:@selector(toggleLeftMenu)]) {
+		[navVC.slidingDelegate toggleLeftMenu];
+	  }
 	}
+	
 }
 @end

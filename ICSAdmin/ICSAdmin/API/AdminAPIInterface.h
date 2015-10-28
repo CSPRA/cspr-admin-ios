@@ -8,6 +8,8 @@
 
 #import "APIInterface.h"
 
-@interface AdminAPIInterface : APIInterface
+@interface AdminAPIInterface : APIInterface<APIInterface>
+
++ (instancetype)sharedInstance;
 
 @end

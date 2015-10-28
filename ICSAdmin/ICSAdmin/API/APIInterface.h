@@ -21,7 +21,36 @@ typedef enum {
 typedef void (^ApiCompletionHandler)(BOOL success, NSArray *result, APIError *error);
 
 
-@interface APIInterface : NSObject
+@protocol APIInterface <NSObject>
+
+@required
+
+/*
+ In this method , a subclass should configure Restkit, Object Manager and Object Store.
+ */
+- (void)setupRestkitConfigurations;
+
+/*This method should be implemented by subclass to provide RestKit mapping for all objects.*/
+- (void)setupObjectMappings;
+
+/*Subclass should return the context.*/
+- (NSManagedObjectContext *)managedObjectContext;
+
+/*Should be implementd by subclass to handle any error in the response. */
+- (id<APIErrorProtocol>)errorForOperation: (AFHTTPRequestOperation*)operation
+							 withResponse:(NSDictionary *)response
+								 andError:(NSError *)error;
+
+- (void)setupAuthToken: (NSString*)authToken;
+
+@end
+
+@interface APIInterface : NSObject<APIInterface> {
+
+@public
+  RKObjectManager *_objectManager;
+  RKManagedObjectStore *_objectStore;
+}
 
 @property(nonatomic, readonly)RKObjectManager *objectManager;
 @property(nonatomic, readonly)RKManagedObjectStore *objectStore;
@@ -69,29 +98,5 @@ typedef void (^ApiCompletionHandler)(BOOL success, NSArray *result, APIError *er
 							completion:(ApiCompletionHandler)block;
 
 - (NSArray *)collectionFromMainQueueManagedObjectContext:(NSArray *)objects;
-
-@end
-
-@protocol APIInterface <NSObject>
-
-@required
-
-/*
- In this method , a subclass should configure Restkit, Object Manager and Object Store.
- */
-- (void)setupRestkitConfigurations;
-
-/*This method should be implemented by subclass to provide RestKit mapping for all objects.*/
-- (void)setupObjectMappings;
-
-/*Subclass should return the context.*/
-- (NSManagedObjectContext *)managedObjectContext;
-
-/*Should be implementd by subclass to handle any error in the response. */
-- (id<APIErrorProtocol>)errorForOperation: (AFHTTPRequestOperation*)operation
-							 withResponse:(NSDictionary *)response
-								 andError:(NSError *)error;
-
-- (void)setupAuthToken: (NSString*)authToken;
 
 @end

@@ -231,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1114" y="-1317"/>
+            <point key="canvasLocation" x="746" y="-1329"/>
         </scene>
         <!--Events View Controller-->
         <scene sceneID="i4y-7W-v9x">
@@ -638,7 +638,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dE2-od-fjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2028" y="-501"/>
+            <point key="canvasLocation" x="746" y="-605"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="C6O-xj-OhM">
+            <objects>
+                <viewController storyboardIdentifier="profileVC" id="tJa-We-JWC" customClass="ProfileViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KoR-Us-TNp"/>
+                        <viewControllerLayoutGuide type="bottom" id="rqL-UN-aHd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bgT-Lv-NcK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rqq-4U-1d1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1420" y="-605"/>
         </scene>
         <!--Custom Navigation Controller-->
         <scene sceneID="hxe-HF-5Iv">

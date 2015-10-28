@@ -13,6 +13,12 @@
 		4E2A87751BE0A92000F553B2 /* APIInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A87741BE0A92000F553B2 /* APIInterface.m */; settings = {ASSET_TAGS = (); }; };
 		4E2A87791BE0A9E800F553B2 /* APIError.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A87781BE0A9E800F553B2 /* APIError.m */; settings = {ASSET_TAGS = (); }; };
 		4E2A877E1BE0BEFF00F553B2 /* AdminAPIInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A877D1BE0BEFF00F553B2 /* AdminAPIInterface.m */; settings = {ASSET_TAGS = (); }; };
+		4E2A87811BE0C5E500F553B2 /* ICSDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A87801BE0C5E500F553B2 /* ICSDataManager.m */; settings = {ASSET_TAGS = (); }; };
+		4E2A87841BE0D63A00F553B2 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A87831BE0D63A00F553B2 /* User+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		4E2A87881BE0D64C00F553B2 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A87871BE0D64C00F553B2 /* User.m */; settings = {ASSET_TAGS = (); }; };
+		4E2A878D1BE0D6FB00F553B2 /* User+APIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A878C1BE0D6FB00F553B2 /* User+APIAdditions.m */; settings = {ASSET_TAGS = (); }; };
+		4E2A87911BE0E4DD00F553B2 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A87901BE0E4DD00F553B2 /* ProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
+		4E2A87921BE0E4DD00F553B2 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A87901BE0E4DD00F553B2 /* ProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
 		4E88B7EB1BDDFF7400560B14 /* CreateEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B7EA1BDDFF7400560B14 /* CreateEventViewController.m */; };
 		4E88B7EE1BDE1EAC00560B14 /* SelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B7ED1BDE1EAC00560B14 /* SelectorView.m */; };
 		4EDCEE5D1BD4D0F6000847BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCEE5C1BD4D0F6000847BA /* main.m */; };
@@ -67,6 +73,16 @@
 		4E2A877B1BE0BE6B00F553B2 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		4E2A877C1BE0BEFF00F553B2 /* AdminAPIInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdminAPIInterface.h; path = API/AdminAPIInterface.h; sourceTree = "<group>"; };
 		4E2A877D1BE0BEFF00F553B2 /* AdminAPIInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdminAPIInterface.m; path = API/AdminAPIInterface.m; sourceTree = "<group>"; };
+		4E2A877F1BE0C5E500F553B2 /* ICSDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICSDataManager.h; path = Model/ICSDataManager.h; sourceTree = "<group>"; };
+		4E2A87801BE0C5E500F553B2 /* ICSDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICSDataManager.m; path = Model/ICSDataManager.m; sourceTree = "<group>"; };
+		4E2A87821BE0D63300F553B2 /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User+CoreDataProperties.h"; path = "Model/Objects/User+CoreDataProperties.h"; sourceTree = "<group>"; };
+		4E2A87831BE0D63A00F553B2 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User+CoreDataProperties.m"; path = "Model/Objects/User+CoreDataProperties.m"; sourceTree = "<group>"; };
+		4E2A87861BE0D64500F553B2 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Model/Objects/User.h; sourceTree = "<group>"; };
+		4E2A87871BE0D64C00F553B2 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Model/Objects/User.m; sourceTree = "<group>"; };
+		4E2A878B1BE0D6FB00F553B2 /* User+APIAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User+APIAdditions.h"; path = "Model/Objects/User+APIAdditions.h"; sourceTree = "<group>"; };
+		4E2A878C1BE0D6FB00F553B2 /* User+APIAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User+APIAdditions.m"; path = "Model/Objects/User+APIAdditions.m"; sourceTree = "<group>"; };
+		4E2A878F1BE0E4DC00F553B2 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = Controllers/ProfileViewController.h; sourceTree = "<group>"; };
+		4E2A87901BE0E4DD00F553B2 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = Controllers/ProfileViewController.m; sourceTree = "<group>"; };
 		4E88B7E91BDDFF7400560B14 /* CreateEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateEventViewController.h; path = Controllers/CreateEventViewController.h; sourceTree = "<group>"; };
 		4E88B7EA1BDDFF7400560B14 /* CreateEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateEventViewController.m; path = Controllers/CreateEventViewController.m; sourceTree = "<group>"; };
 		4E88B7EC1BDE1EAC00560B14 /* SelectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectorView.h; path = Views/SelectorView.h; sourceTree = "<group>"; };
@@ -146,6 +162,19 @@
 				4E2A877D1BE0BEFF00F553B2 /* AdminAPIInterface.m */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		4E2A878A1BE0D66D00F553B2 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				4E2A87871BE0D64C00F553B2 /* User.m */,
+				4E2A87861BE0D64500F553B2 /* User.h */,
+				4E2A87821BE0D63300F553B2 /* User+CoreDataProperties.h */,
+				4E2A87831BE0D63A00F553B2 /* User+CoreDataProperties.m */,
+				4E2A878B1BE0D6FB00F553B2 /* User+APIAdditions.h */,
+				4E2A878C1BE0D6FB00F553B2 /* User+APIAdditions.m */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 		4E88B7EF1BDE1EBE00560B14 /* Views */ = {
@@ -228,11 +257,14 @@
 		4EDCEE891BD4F339000847BA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4E2A878A1BE0D66D00F553B2 /* Entities */,
 				4EDCEE831BD4F1CB000847BA /* ICSAdmin.xcdatamodeld */,
 				4EDCEE8A1BD4F363000847BA /* ICSModel.h */,
 				4EDCEE8B1BD4F363000847BA /* ICSModel.m */,
 				4E2A87701BE0A1DF00F553B2 /* CoreDataManager.h */,
 				4E2A87711BE0A1DF00F553B2 /* CoreDataManager.m */,
+				4E2A877F1BE0C5E500F553B2 /* ICSDataManager.h */,
+				4E2A87801BE0C5E500F553B2 /* ICSDataManager.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -275,6 +307,8 @@
 				4EFE5DD41BDF75690059C645 /* FormViewController.m */,
 				4E2A876A1BDFC1D800F553B2 /* SearchViewController.h */,
 				4E2A876B1BDFC1D800F553B2 /* SearchViewController.m */,
+				4E2A878F1BE0E4DC00F553B2 /* ProfileViewController.h */,
+				4E2A87901BE0E4DD00F553B2 /* ProfileViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -458,11 +492,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E23A6D91BD69D62006DC475 /* VolunteerViewController.m in Sources */,
+				4E2A878D1BE0D6FB00F553B2 /* User+APIAdditions.m in Sources */,
 				4EDCEE8F1BD4F527000847BA /* AppDelegate.m in Sources */,
+				4E2A87881BE0D64C00F553B2 /* User.m in Sources */,
 				4E2A876C1BDFC1D800F553B2 /* SearchViewController.m in Sources */,
 				4EDCEE5D1BD4D0F6000847BA /* main.m in Sources */,
 				4EDCEEA01BD4F8CF000847BA /* LoginViewController.m in Sources */,
 				4EFE5DD21BDF6BF90059C645 /* QuestionnaireViewController.m in Sources */,
+				4E2A87811BE0C5E500F553B2 /* ICSDataManager.m in Sources */,
 				4EDCEEB71BD68F87000847BA /* EventsViewController.m in Sources */,
 				4EDCEEAA1BD51970000847BA /* HomeViewController.m in Sources */,
 				4EDCEEA71BD502B3000847BA /* SignupViewController.m in Sources */,
@@ -474,6 +511,8 @@
 				4E88B7EB1BDDFF7400560B14 /* CreateEventViewController.m in Sources */,
 				4EDCEE991BD4F855000847BA /* ControllerTransitionContext.m in Sources */,
 				4E2A87721BE0A1DF00F553B2 /* CoreDataManager.m in Sources */,
+				4E2A87911BE0E4DD00F553B2 /* ProfileViewController.m in Sources */,
+				4E2A87841BE0D63A00F553B2 /* User+CoreDataProperties.m in Sources */,
 				4E2A87751BE0A92000F553B2 /* APIInterface.m in Sources */,
 				4EFE5DD51BDF75690059C645 /* FormViewController.m in Sources */,
 				4E2A87791BE0A9E800F553B2 /* APIError.m in Sources */,
@@ -488,6 +527,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E2A87921BE0E4DD00F553B2 /* ProfileViewController.m in Sources */,
 				4EDCEE7A1BD4D0F6000847BA /* ICSAdminTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -669,10 +709,13 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ICSAdmin/ICSAdmin-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = ICSAdminTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "GHCI-CSPR.$(PRODUCT_NAME:rfc1034identifier)";
@@ -689,6 +732,9 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ICSAdmin/ICSAdmin-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = ICSAdminTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "GHCI-CSPR.$(PRODUCT_NAME:rfc1034identifier)";

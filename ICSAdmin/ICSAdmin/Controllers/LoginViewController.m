@@ -8,8 +8,12 @@
 
 #import "LoginViewController.h"
 #import "AppDelegate.h"
+#import "ICSDataManager.h"
 
-@interface LoginViewController ()
+@interface LoginViewController ()<UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *emailField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
 
 @end
 
@@ -26,8 +30,29 @@
 }
 
 - (IBAction)handleTapOnLogin:(id)sender {
-  AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-  [appDelegate showHomeFlow];
+  [self validateAndLogin];
+}
+
+#pragma mark - UITextFieldDelegate Methods
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+  if ([textField isEqual:self.emailField]) {
+	[self.passwordField becomeFirstResponder];
+  }else if ([textField isEqual:self.passwordField]){
+	[self validateAndLogin];
+  }
+  return YES;
+}
+
+- (void)validateAndLogin {
+	[[ICSDataManager shared] loginWithEmailId:self.emailField.text password:self.passwordField.text completion:^(BOOL success, id result, APIError *error) {
+	  NSLog(@"result = %@",result);
+	  NSLog(@"error = %@",error);
+	  if (success) {
+		AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+ 		 [appDelegate showHomeFlow];
+	  }
+	}];
 }
 
 @end

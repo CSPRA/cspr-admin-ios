@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "ICSModel.h"
 #import "ContainerViewController.h"
 #import "LoginViewController.h"
 #import <RUMSlidingMenuViewController.h>
@@ -15,6 +14,7 @@
 #import "HomeViewController.h"
 #import "CustomNavigationController.h"
 #import "CoreDataManager.h"
+#import "ICSDataManager.h"
 
 @interface AppDelegate ()
 
@@ -72,8 +72,8 @@
 //  UINavigationController *navVC = [[UINavigationController alloc]initWithRootViewController:slidingMenuContainer];
 //  [navVC setTitle:@"Home"];
 //  [navVC setViewControllers:@[slidingMenuContainer]];
-
-  if ([[ICSModel sharedModel] loggedInUserPresent]) {
+  NSLog(@"current User = %@",[[ICSDataManager shared] currentUser]);
+  if ([[ICSDataManager shared] currentUser]) {
 ContainerViewController *containerVC = [[ContainerViewController alloc]initWithViewControllers:@[self.slidingMenuContainer,loginNavigation]];
 self.window.rootViewController = containerVC;
 //	[self showHomeFlow];

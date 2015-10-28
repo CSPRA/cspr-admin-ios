@@ -16,6 +16,8 @@ static CoreDataManager *_sharedInstance = nil;
 
 @interface CoreDataManager()
 
+@property (readwrite, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+
 @end
 
 @implementation CoreDataManager
