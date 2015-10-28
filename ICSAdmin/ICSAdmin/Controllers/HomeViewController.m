@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "NSDate+FormattedDate.h"
+#import "ICSDataManager.h"
 
 @interface HomeViewController ()
 
@@ -15,7 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *toDateLabel;
 @property (strong, nonatomic) UILabel *selectedLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *fromDatePicker;
-
 @property (weak, nonatomic) IBOutlet UIDatePicker *toDatePicker;
 @end
 
@@ -24,6 +24,9 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self configureDateSelector];
+  [[ICSDataManager shared]fetchCancerTypesWithCompletion:^(BOOL success, NSArray *result, APIError *error) {
+	NSLog(@"result count = %d",result.count);
+  }];
 }
 
 - (void)didReceiveMemoryWarning {

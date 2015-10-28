@@ -114,6 +114,18 @@
   
   [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
   
+  
+  //Mapping for cancertype
+  
+  RKEntityMapping * cancertypeMapping = [User restkitObjectMappingForStore:self.objectStore];
+  responseDescriptor =
+  [RKResponseDescriptor responseDescriptorWithMapping:cancertypeMapping
+											   method:RKRequestMethodGET
+										  pathPattern:kAPIPathCancerType
+											  keyPath:@"cancerTypes"
+										  statusCodes:self.successSet];
+  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
+  
 }
 
 - (NSManagedObjectContext *)managedObjectContext {

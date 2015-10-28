@@ -16,5 +16,6 @@ static NSString * const kApiBaseUrl = @"http://cspr-web-dev.elasticbeanstalk.com
 
 static NSString * const kAPIPathRegister = @"staff/register";
 static NSString * const kAPIPathLogin = @"staff/login";
+static NSString * const kAPIPathCancerType = @"cancerTypes";
 
 #endif /* Constants_h */

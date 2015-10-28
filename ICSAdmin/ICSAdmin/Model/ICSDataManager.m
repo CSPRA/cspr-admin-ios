@@ -85,4 +85,15 @@ static ICSDataManager *sharedInstance = nil;
 
 }
 
+
+#pragma mark -
+
+- (void)fetchCancerTypesWithCompletion:(ICSDataManagerCompletionBlock)completion {
+ 	 [[AdminAPIInterface sharedInstance] getObjectsAtPath:kAPIPathCancerType
+  											parameters:@{@"token":self.currentUser.token}
+											completion:^(BOOL success, NSArray *result, APIError *error) {
+											 completion(success, result, error);
+  }];
+}
+
 @end

@@ -32,5 +32,8 @@ typedef void (^ICSDataManagerCompletionBlock)(BOOL success, id result, APIError 
 
 - (void)logoutWithCompletion: (ICSDataManagerCompletionBlock)completion;
 
+#pragma mark -
+
+- (void)fetchCancerTypesWithCompletion:(ICSDataManagerCompletionBlock)completion;
 
 @end
