@@ -177,6 +177,19 @@
 			name = Entities;
 			sourceTree = "<group>";
 		};
+		4E2A87931BE0EE8800F553B2 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				4E2A878F1BE0E4DC00F553B2 /* ProfileViewController.h */,
+				4E2A87901BE0E4DD00F553B2 /* ProfileViewController.m */,
+				4EDCEE9E1BD4F8CB000847BA /* LoginViewController.h */,
+				4EDCEE9F1BD4F8CF000847BA /* LoginViewController.m */,
+				4EDCEEA51BD502B3000847BA /* SignupViewController.h */,
+				4EDCEEA61BD502B3000847BA /* SignupViewController.m */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
 		4E88B7EF1BDE1EBE00560B14 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,10 +298,7 @@
 		4EDCEEA11BD4F8D7000847BA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4EDCEE9E1BD4F8CB000847BA /* LoginViewController.h */,
-				4EDCEE9F1BD4F8CF000847BA /* LoginViewController.m */,
-				4EDCEEA51BD502B3000847BA /* SignupViewController.h */,
-				4EDCEEA61BD502B3000847BA /* SignupViewController.m */,
+				4E2A87931BE0EE8800F553B2 /* Authentication */,
 				4EDCEEA81BD51970000847BA /* HomeViewController.h */,
 				4EDCEEA91BD51970000847BA /* HomeViewController.m */,
 				4EDCEEAF1BD62F8F000847BA /* MenuViewController.h */,
@@ -307,8 +317,6 @@
 				4EFE5DD41BDF75690059C645 /* FormViewController.m */,
 				4E2A876A1BDFC1D800F553B2 /* SearchViewController.h */,
 				4E2A876B1BDFC1D800F553B2 /* SearchViewController.m */,
-				4E2A878F1BE0E4DC00F553B2 /* ProfileViewController.h */,
-				4E2A87901BE0E4DD00F553B2 /* ProfileViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

@@ -46,20 +46,39 @@ static ICSDataManager *sharedInstance = nil;
 								   parameters:params
 								   completion:^(BOOL success, NSArray *result, APIError *error) {
 									 if (success) {
+									   NSLog(@"result = %@",result);
+									   NSLog(@"error = %@",error);
 									   _currentUser = [result firstObject];
 									 }
 									 completion(success, [result firstObject], error);
 								   }];
 }
 
-- (void)signUpWithEmailId:(NSString *)emailID
+- (void)signUpWithEmailId:(NSString *)emailId
 				 password:(NSString *)password
 				 username:(NSString *)username
 				firstname:(NSString *)firstname
 				 lastname:(NSString *)lastname
 			contactNumber:(NSString *)contactNumber
 			   completion:(ICSDataManagerCompletionBlock)completion {
-
+  
+ NSDictionary  *params = [NSDictionary dictionaryWithObjectsAndKeys:emailId, @"email",password, @"password",username,@"username",firstname,@"firstname",lastname,@"lastname",contactNumber,@"contactNumber",nil];
+  [[AdminAPIInterface sharedInstance] postObject:nil
+										 path:kAPIPathRegister
+								   parameters:params
+								   completion:^(BOOL success, NSArray *result, APIError *error) {
+									 if (success) {
+									   NSLog(@"result = %@",result);
+									   NSLog(@"error = %@",error);
+									   _currentUser = [result firstObject];
+									   _currentUser.firstname = firstname;
+									   _currentUser.lastname = lastname;
+									   _currentUser.email = emailId;
+									   _currentUser.username = username;
+									   _currentUser.contactNumber = contactNumber;
+									 }
+									 completion(success, [result firstObject], error);
+								   }];
 }
 
 - (void)logoutWithCompletion:(ICSDataManagerCompletionBlock)completion {

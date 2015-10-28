@@ -18,7 +18,7 @@ typedef void (^ICSDataManagerCompletionBlock)(BOOL success, id result, APIError 
 
 #pragma mark - User login/signup flow
 
-- (void)signUpWithEmailId:(NSString *)emailID
+- (void)signUpWithEmailId:(NSString *)emailId
 				 password:(NSString *)password
 				 username:(NSString *)username
 				firstname:(NSString *)firstname

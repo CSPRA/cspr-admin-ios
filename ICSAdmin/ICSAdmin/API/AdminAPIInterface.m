@@ -84,7 +84,7 @@
   [RKResponseDescriptor responseDescriptorWithMapping:userMapping
 											   method:RKRequestMethodPOST
 										  pathPattern:kAPIPathRegister
-											  keyPath:nil
+											  keyPath:@"result"
 										  statusCodes:self.successSet];
   [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
   
@@ -105,6 +105,15 @@
 															   statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassClientError)];
 
   [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
+  
+  responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:errorMapping
+																	method:RKRequestMethodPOST
+															   pathPattern:kAPIPathRegister
+																   keyPath:@"error"
+															   statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassClientError)];
+  
+  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
+  
 }
 
 - (NSManagedObjectContext *)managedObjectContext {

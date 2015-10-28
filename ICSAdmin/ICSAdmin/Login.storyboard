@@ -133,36 +133,57 @@
                                                 <rect key="frame" x="20" y="20" width="382" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="lgg-qW-28v" id="8sV-9S-qd0"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A1s-rm-OvY" userLabel="Username">
                                                 <rect key="frame" x="20" y="60" width="382" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="lgg-qW-28v" id="jpQ-NG-Gqi"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Firstname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="06e-2s-TmH" userLabel="Firstname">
                                                 <rect key="frame" x="20" y="100" width="382" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="lgg-qW-28v" id="GA8-20-r1c"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lastname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SyB-lU-tOq" userLabel="Lastname">
                                                 <rect key="frame" x="20" y="140" width="382" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="lgg-qW-28v" id="9So-SW-pvg"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phonenumber" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k6s-TX-kRa" userLabel="Phonenumber">
                                                 <rect key="frame" x="20" y="180" width="382" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="lgg-qW-28v" id="quK-W1-y1f"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NDA-yi-QKb" userLabel="Password">
                                                 <rect key="frame" x="20" y="220" width="382" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="lgg-qW-28v" id="yP9-02-Egm"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g5A-1A-Jfd" userLabel="Confirm Password">
                                                 <rect key="frame" x="20" y="260" width="382" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="lgg-qW-28v" id="mPc-yJ-cc9"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -213,6 +234,9 @@
                                         <state key="normal" title="Sign up">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="handleTapOnSignup:" destination="lgg-qW-28v" eventType="touchUpInside" id="C8D-PT-GLT"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -245,6 +269,15 @@
                             <outletCollection property="gestureRecognizers" destination="RfB-xQ-KbL" appends="YES" id="1TO-Ak-OYg"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="confirmPasswordField" destination="g5A-1A-Jfd" id="1LW-fk-n5w"/>
+                        <outlet property="emailField" destination="3hx-lf-8GB" id="Iqb-MO-Lbl"/>
+                        <outlet property="firstnameField" destination="06e-2s-TmH" id="hJ0-5Y-6zo"/>
+                        <outlet property="lastnameField" destination="SyB-lU-tOq" id="4hR-c8-Pfs"/>
+                        <outlet property="passwordField" destination="NDA-yi-QKb" id="Hky-PJ-zn4"/>
+                        <outlet property="phoneNumberField" destination="k6s-TX-kRa" id="ASp-lz-wkP"/>
+                        <outlet property="usernameField" destination="A1s-rm-OvY" id="KJs-Ab-jlC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Svn-c6-0YU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="RfB-xQ-KbL">
