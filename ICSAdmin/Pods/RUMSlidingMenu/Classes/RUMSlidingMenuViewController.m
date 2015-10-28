@@ -18,6 +18,7 @@
 
 @property (nonatomic,assign) BOOL leftViewVisible;
 @property (nonatomic,assign) BOOL rightViewVisible;
+@property (nonatomic,assign) BOOL isAnimating;
 
 - (UIView *)leftView;
 - (UIView *)rightView;
@@ -161,7 +162,13 @@ NSString *const kSlidingMenuStateChangeNotification = @"slidingMenuStateHasChang
     
     if (self.leftViewVisible) {
         [self resetMenu];
+	  NSLog(@"reset now");
     } else {
+	  if (self.leftViewVisible) return;
+	  NSLog(@"show now");
+//	  CGRect currentFrame = self.rootViewController.view.frame;
+//	  CGRect finalRect = CGRectOffset(currentFrame,(self.view.frame.size.width - kMenuPadding);
+//		if (CGRectEqualToRect(self.rootViewController.view.frame, finalRect))
         [self.rootViewController.view addSubview:self.invisibleTapView];
         [self.view sendSubviewToBack:[self leftView]];
         
@@ -172,8 +179,12 @@ NSString *const kSlidingMenuStateChangeNotification = @"slidingMenuStateHasChang
                             options:UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction
                          animations:^{
                              CGRect currentFrame = self.rootViewController.view.frame;
-                             self.rootViewController.view.frame = CGRectOffset(currentFrame,(self.view.frame.size.width - kMenuPadding),
-                                                                             0.0f);
+						   CGRect finalFrame = CGRectOffset(currentFrame,(self.view.frame.size.width - kMenuPadding),0.0f);
+						   if (self.rootViewController.view.frame.origin.x < self.view.frame.size.width-kMenuPadding){
+							 self.rootViewController.view.frame = finalFrame;
+						   }
+//                             self.rootViewController.view.frame = CGRectOffset(currentFrame,(self.view.frame.size.width - kMenuPadding),
+//                                                                             0.0f);
                          }
                          completion:^(BOOL finished) {
                              if (finished) {
