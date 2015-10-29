@@ -96,4 +96,11 @@ static ICSDataManager *sharedInstance = nil;
   }];
 }
 
+- (void)fetchEventsWithCompletion:(ICSDataManagerCompletionBlock)completion {
+  [[AdminAPIInterface sharedInstance] getObjectsAtPath:kAPIPathEvent
+  											parameters:@{@"token":self.currentUser.token}
+											completion:^(BOOL success, NSArray *result, APIError *error) {
+											  completion(success, result, error);
+  }];
+}
 @end

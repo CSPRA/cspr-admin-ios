@@ -9,6 +9,10 @@
 #import "AdminAPIInterface.h"
 #import "User.h"
 #import "User+APIAdditions.h"
+#import "CancerType.h"
+#import "Event.h"
+#import "CancerType+APIAdditions.h"
+#import "Event+APIAdditions.h"
 
 @interface AdminAPIInterface()
 
@@ -117,7 +121,7 @@
   
   //Mapping for cancertype
   
-  RKEntityMapping * cancertypeMapping = [User restkitObjectMappingForStore:self.objectStore];
+  RKEntityMapping * cancertypeMapping = [CancerType restkitObjectMappingForStore:self.objectStore];
   responseDescriptor =
   [RKResponseDescriptor responseDescriptorWithMapping:cancertypeMapping
 											   method:RKRequestMethodGET
@@ -126,6 +130,21 @@
 										  statusCodes:self.successSet];
   [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
   
+  
+  //Mapping for events
+  RKObjectMapping *eventMapping = [Event restkitObjectMapping];
+  
+  [eventMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"cancerType"
+																			   toKeyPath:@"cancerType"
+																			 withMapping:cancertypeMapping]];
+  
+  responseDescriptor =
+  [RKResponseDescriptor responseDescriptorWithMapping:eventMapping
+											   method:RKRequestMethodGET
+										  pathPattern:kAPIPathEvent
+											  keyPath:@"result"
+										  statusCodes:self.successSet];
+  [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
 }
 
 - (NSManagedObjectContext *)managedObjectContext {

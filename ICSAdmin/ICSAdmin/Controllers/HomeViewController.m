@@ -25,7 +25,7 @@
   [super viewDidLoad];
   [self configureDateSelector];
   [[ICSDataManager shared]fetchCancerTypesWithCompletion:^(BOOL success, NSArray *result, APIError *error) {
-	NSLog(@"result count = %d",result.count);
+	NSLog(@"result count = %ld",result.count);
   }];
 }
 
