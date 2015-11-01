@@ -103,4 +103,26 @@ static ICSDataManager *sharedInstance = nil;
 											  completion(success, result, error);
   }];
 }
+
+- (void)fetchStatistics:(ICSDataManagerCompletionBlock)completion {
+  [[AdminAPIInterface sharedInstance]getObjectsAtPath:kAPIPathStatistics parameters:@{@"token":self.currentUser.token} completion:^(BOOL success, NSArray *result, APIError *error) {
+	NSLog(@"count = %lu",(unsigned long)result.count);
+  }];
+}
+- (void)fetchStatisticsForStartDate:(NSDate *)startDate andEndDate:(NSDate *)endDate withCompletion:(ICSDataManagerCompletionBlock)completion {
+  NSDateFormatter *format = [[NSDateFormatter alloc] init];
+  format.dateFormat = @"dd-MM-yyyy";
+  NSLog(@"DATE = %@",[format stringFromDate:startDate] );
+  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+  [dateFormatter setDateFormat:@"dd/MM/yyyy"];
+  [[RKValueTransformer defaultValueTransformer] insertValueTransformer:dateFormatter atIndex:0];
+  NSDictionary *param = @{@"token":self.currentUser.token,
+					  @"startDate":startDate,@"endDate":endDate};
+					  [[AdminAPIInterface sharedInstance]getPath:kAPIPathStatistics parameters:param completion:^(BOOL success, id result, APIError *error) {
+						completion(success,result,error);
+					  }];
+//  [[AdminAPIInterface sharedInstance]getObjectsAtPath:kAPIPathStatistics parameters:param completion:^(BOOL success, NSArray *result, APIError *error) {
+//	NSLog(@"count = %lu",(unsigned long)result.count);
+//  }];
+}
 @end

@@ -10,7 +10,7 @@
 #define Constants_h
 
 static NSString * const kApiBaseUrl = @"http://cspr-web-dev.elasticbeanstalk.com/";
-
+//static NSString * const kApiBaseUrl = @"http://localhost:8080/";
 
 #pragma mark - API Endpoints
 
@@ -18,5 +18,6 @@ static NSString * const kAPIPathRegister = @"staff/register";
 static NSString * const kAPIPathLogin = @"staff/login";
 static NSString * const kAPIPathCancerType = @"cancerTypes";
 static NSString * const kAPIPathEvent = @"events";
+static NSString * const kAPIPathStatistics = @"statistics";
 
 #endif /* Constants_h */

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E0411A11BE64ADB0060329C /* EventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0411A01BE64ADB0060329C /* EventCell.m */; settings = {ASSET_TAGS = (); }; };
 		4E23A6D91BD69D62006DC475 /* VolunteerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E23A6D81BD69D62006DC475 /* VolunteerViewController.m */; };
 		4E2A876C1BDFC1D800F553B2 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A876B1BDFC1D800F553B2 /* SearchViewController.m */; settings = {ASSET_TAGS = (); }; };
 		4E2A87721BE0A1DF00F553B2 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A87711BE0A1DF00F553B2 /* CoreDataManager.m */; settings = {ASSET_TAGS = (); }; };
@@ -62,6 +63,8 @@
 
 /* Begin PBXFileReference section */
 		4916C51D39A56942E3C07901 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		4E04119F1BE64ADB0060329C /* EventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventCell.h; path = Views/EventCell.h; sourceTree = "<group>"; };
+		4E0411A01BE64ADB0060329C /* EventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventCell.m; path = Views/EventCell.m; sourceTree = "<group>"; };
 		4E23A6D71BD69D62006DC475 /* VolunteerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VolunteerViewController.h; path = Controllers/VolunteerViewController.h; sourceTree = "<group>"; };
 		4E23A6D81BD69D62006DC475 /* VolunteerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VolunteerViewController.m; path = Controllers/VolunteerViewController.m; sourceTree = "<group>"; };
 		4E2A876A1BDFC1D800F553B2 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = Controllers/SearchViewController.h; sourceTree = "<group>"; };
@@ -220,6 +223,8 @@
 			children = (
 				4E88B7EC1BDE1EAC00560B14 /* SelectorView.h */,
 				4E88B7ED1BDE1EAC00560B14 /* SelectorView.m */,
+				4E04119F1BE64ADB0060329C /* EventCell.h */,
+				4E0411A01BE64ADB0060329C /* EventCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -525,6 +530,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E23A6D91BD69D62006DC475 /* VolunteerViewController.m in Sources */,
+				4E0411A11BE64ADB0060329C /* EventCell.m in Sources */,
 				4E2A87AE1BE1EEE900F553B2 /* CancerType.m in Sources */,
 				4EDCEE8F1BD4F527000847BA /* AppDelegate.m in Sources */,
 				4E2A87AF1BE1EEE900F553B2 /* CancerType+APIAdditions.m in Sources */,

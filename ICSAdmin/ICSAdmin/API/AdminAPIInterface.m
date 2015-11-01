@@ -156,13 +156,16 @@
 								 andError:(NSError *)error  {
   __block NSString * domain = [response objectForKey:@"_error_type"];
   __block NSString *message = [response objectForKey:@"_error_message"];
-  __block NSInteger statusCode = 200;
+  __block NSInteger statusCode = 400;
   if (!message) {
-	[response enumerateKeysAndObjectsUsingBlock:^(NSString* key, NSDictionary* obj, BOOL *stop) {
+	[response enumerateKeysAndObjectsUsingBlock:^(NSString* key, id obj, BOOL *stop) {
 	  domain = key;
-//	  message = [obj firstObject];
-	  message = [obj objectForKey:@"message"];
-	  statusCode = [[obj objectForKey:@"code"]integerValue];
+	  if ([obj isKindOfClass:[NSDictionary class]]) {
+	    message = [obj objectForKey:@"message"];
+		statusCode = [[obj objectForKey:@"code"]integerValue];
+	  }else if ([obj isKindOfClass:[NSString class]]) {
+		message = obj;
+	  }
 	  *stop = YES;
 	}];
   }

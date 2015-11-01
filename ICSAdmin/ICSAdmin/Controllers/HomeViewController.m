@@ -15,6 +15,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *fromDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *toDateLabel;
 @property (strong, nonatomic) UILabel *selectedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *screeningCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *registrationCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *eventsCountLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *fromDatePicker;
 @property (weak, nonatomic) IBOutlet UIDatePicker *toDatePicker;
 @end
@@ -26,6 +29,7 @@
   [self configureDateSelector];
   [[ICSDataManager shared]fetchCancerTypesWithCompletion:^(BOOL success, NSArray *result, APIError *error) {
 	NSLog(@"result count = %ld",result.count);
+	[self fetchStatistics:nil];
   }];
 }
 
@@ -77,7 +81,26 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)fetchStatistics:(id)sender {
+  [[ICSDataManager shared]fetchCancerTypesWithCompletion:^(BOOL success, NSArray *result, APIError *error) {
+	NSLog(@"result count = %ld",result.count);
+	[[ICSDataManager shared]fetchStatisticsForStartDate:self.fromDatePicker.date andEndDate:self.toDatePicker.date withCompletion:^(BOOL success,  NSArray * result, APIError *error) {
+	  self.fromDatePicker.hidden = YES;
+	  self.toDatePicker.hidden = YES;
+	  NSDictionary *dict =[result firstObject];
+	  [self updateSummaryView:[dict objectForKey:@"result"]];
+	  
+	}];
+  }];
 
+}
+- (void)updateSummaryView:(NSDictionary *)dictionary {
+  
+  self.registrationCountLabel.text = [NSString stringWithFormat:@"%@",[dictionary objectForKey:@"registrations"]];
+  self.screeningCountLabel.text = [NSString stringWithFormat:@"%@",[dictionary objectForKey:@"screenings"]];
+  self.eventsCountLabel.text = [NSString stringWithFormat:@"%@",[dictionary objectForKey:@"events"]];
+
+}
 #pragma mark - 
 
 @end

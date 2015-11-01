@@ -15,7 +15,7 @@
 												  inManagedObjectStore:store];
   [mapping setIdentificationAttributes:@[@"id"]];
   [mapping addAttributeMappingsFromDictionary:
-   @{
+   @{@"id":@"id",
 	 @"name": @"name",
 	 @"description": @"about",
 	}];
