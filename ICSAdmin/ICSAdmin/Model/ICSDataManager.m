@@ -109,6 +109,7 @@ static ICSDataManager *sharedInstance = nil;
 	NSLog(@"count = %lu",(unsigned long)result.count);
   }];
 }
+
 - (void)fetchStatisticsForStartDate:(NSDate *)startDate andEndDate:(NSDate *)endDate withCompletion:(ICSDataManagerCompletionBlock)completion {
   NSDateFormatter *format = [[NSDateFormatter alloc] init];
   format.dateFormat = @"dd-MM-yyyy";
@@ -118,11 +119,23 @@ static ICSDataManager *sharedInstance = nil;
   [[RKValueTransformer defaultValueTransformer] insertValueTransformer:dateFormatter atIndex:0];
   NSDictionary *param = @{@"token":self.currentUser.token,
 					  @"startDate":startDate,@"endDate":endDate};
-					  [[AdminAPIInterface sharedInstance]getPath:kAPIPathStatistics parameters:param completion:^(BOOL success, id result, APIError *error) {
-						completion(success,result,error);
-					  }];
-//  [[AdminAPIInterface sharedInstance]getObjectsAtPath:kAPIPathStatistics parameters:param completion:^(BOOL success, NSArray *result, APIError *error) {
-//	NSLog(@"count = %lu",(unsigned long)result.count);
-//  }];
+  [[AdminAPIInterface sharedInstance]getPath:kAPIPathStatistics
+								  parameters:param
+								  completion:^(BOOL success, id result, APIError *error) {
+									completion(success,result,error);
+					 			 }];
+}
+
+#pragma mark - Assignments
+
+- (void)fetchAssignmentsForEvent:(NSString *)eventId withCompletion:(ICSDataManagerCompletionBlock)completion {
+  NSString *path = [NSString stringWithFormat:@"%@/%@",kAPIPathAssignments, eventId];
+  NSDictionary *param = @{@"token":self.currentUser.token};
+  [[AdminAPIInterface sharedInstance]getPath:path
+								  parameters:param
+								  completion:^(BOOL success, id result, APIError *error) {
+									completion(success,result,error);
+					 			 }];
+
 }
 @end

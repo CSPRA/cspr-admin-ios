@@ -7,6 +7,7 @@
 //
 
 #import "AssignmentViewController.h"
+#import "ICSDataManager.h"
 
 @interface AssignmentViewController ()
 
@@ -16,7 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+	[[ICSDataManager shared] fetchAssignmentsForEvent:self.event.eventId withCompletion:^(BOOL success, id result, APIError *error) {
+
+	}];
 }
 
 - (void)didReceiveMemoryWarning {

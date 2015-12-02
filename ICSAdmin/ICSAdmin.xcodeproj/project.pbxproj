@@ -246,6 +246,8 @@
 		4E9436CA1C0EED800070042D /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				4EDCEEB51BD68F87000847BA /* EventsViewController.h */,
+				4EDCEEB61BD68F87000847BA /* EventsViewController.m */,
 				4E9436C71C0EED7B0070042D /* AssignmentViewController.h */,
 				4E9436C81C0EED7B0070042D /* AssignmentViewController.m */,
 			);
@@ -358,8 +360,6 @@
 				4EDCEEB01BD62F8F000847BA /* MenuViewController.m */,
 				4EDCEEB21BD63CD5000847BA /* CustomNavigationController.h */,
 				4EDCEEB31BD63CD5000847BA /* CustomNavigationController.m */,
-				4EDCEEB51BD68F87000847BA /* EventsViewController.h */,
-				4EDCEEB61BD68F87000847BA /* EventsViewController.m */,
 				4E23A6D71BD69D62006DC475 /* VolunteerViewController.h */,
 				4E23A6D81BD69D62006DC475 /* VolunteerViewController.m */,
 				4E88B7E91BDDFF7400560B14 /* CreateEventViewController.h */,

@@ -539,6 +539,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <segue destination="fur-ZL-xlH" kind="show" identifier="EventToAssignment" id="qMm-Ns-Hpb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -573,10 +576,10 @@
             </objects>
             <point key="canvasLocation" x="2038" y="-1275"/>
         </scene>
-        <!--View Controller-->
+        <!--Assignment View Controller-->
         <scene sceneID="35Z-9W-yxf">
             <objects>
-                <viewController id="fur-ZL-xlH" sceneMemberID="viewController">
+                <viewController id="fur-ZL-xlH" customClass="AssignmentViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PVI-3a-kdA"/>
                         <viewControllerLayoutGuide type="bottom" id="5TN-Vi-Xjk"/>
@@ -590,7 +593,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlg-5h-a7k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2038" y="-582"/>
+            <point key="canvasLocation" x="2038" y="-457"/>
         </scene>
         <!--Create Event View Controller-->
         <scene sceneID="D6H-FG-hgh">

@@ -37,5 +37,6 @@ typedef void (^ICSDataManagerCompletionBlock)(BOOL success, id result, APIError 
 - (void)fetchCancerTypesWithCompletion:(ICSDataManagerCompletionBlock)completion;
 - (void)fetchEventsWithCompletion:(ICSDataManagerCompletionBlock)completion;
 - (void)fetchStatisticsForStartDate:(NSDate *)startDate andEndDate:(NSDate *)endDate withCompletion:(ICSDataManagerCompletionBlock)completion;
+- (void)fetchAssignmentsForEvent:(NSString *)eventId withCompletion:(ICSDataManagerCompletionBlock)completion;
 
 @end

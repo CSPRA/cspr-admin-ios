@@ -19,5 +19,7 @@ static NSString * const kAPIPathLogin = @"staff/login";
 static NSString * const kAPIPathCancerType = @"cancerTypes";
 static NSString * const kAPIPathEvent = @"events";
 static NSString * const kAPIPathStatistics = @"statistics";
+static NSString * const kAPIPathPatternAssignments = @"assignments/:eventId";
+static NSString * const kAPIPathAssignments = @"assignments";
 
 #endif /* Constants_h */

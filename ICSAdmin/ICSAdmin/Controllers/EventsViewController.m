@@ -10,6 +10,7 @@
 #import "ICSDataManager.h"
 #import "Event.h"
 #import	"EventCell.h"
+#import "AssignmentViewController.h"
 
 @interface EventsViewController()<UITableViewDataSource, UITableViewDelegate>
 
@@ -49,6 +50,21 @@
   EventCell *cell = (EventCell *)[tableView dequeueReusableCellWithIdentifier:@"eventCell"];
   [cell configureWithEvent:[self.eventsList objectAtIndex:indexPath.row]];
   return cell;
+}
+
+#pragma mark - UITableViewDelegate methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  [self performSegueWithIdentifier:@"EventToAssignment" sender:self];
+}
+
+#pragma mark -
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  if ([segue.identifier isEqualToString:@"EventToAssignment"]) {
+  	AssignmentViewController *vc = (AssignmentViewController *)segue.destinationViewController;
+	vc.event = [self.eventsList objectAtIndex:[self.eventTable indexPathForSelectedRow].row];
+  }
 }
 
 @end
