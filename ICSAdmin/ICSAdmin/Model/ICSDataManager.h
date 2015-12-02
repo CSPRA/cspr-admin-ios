@@ -39,5 +39,6 @@ typedef void (^ICSDataManagerCompletionBlock)(BOOL success, id result, APIError 
 - (void)fetchStatisticsForStartDate:(NSDate *)startDate andEndDate:(NSDate *)endDate withCompletion:(ICSDataManagerCompletionBlock)completion;
 - (void)fetchAssignmentsForEvent:(NSString *)eventId withCompletion:(ICSDataManagerCompletionBlock)completion;
 - (void)fetchFreeVolunteersWithCompletion:(ICSDataManagerCompletionBlock)completion;
+- (void)assignVolunteerToEvent:(NSString *)eventId withParam:(NSDictionary *)param withCompletion:(ICSDataManagerCompletionBlock)completion;
 
 @end

@@ -25,25 +25,8 @@
   [self setupFavoriteButton];
   self.assignedVolunteers = [NSMutableArray array];
   self.freeVolunteers = [NSMutableArray array];
+  [self setupDataSource];
 
-  	__block AssignmentViewController *weakSelf = self;
-	[[ICSDataManager shared] fetchAssignmentsForEvent:self.event.eventId withCompletion:^(BOOL success, NSArray *result, APIError *error) {
-	  NSArray *info = [result.firstObject objectForKey:@"result"];
-	 [info enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
-	   NSDictionary *volunteer = [obj objectForKey:@"volunteer"];
-	   [weakSelf.assignedVolunteers addObject:volunteer];
-	   [weakSelf.volunteerTableView reloadData];
-	 }];
-	}];
-
-	[[ICSDataManager shared] fetchFreeVolunteersWithCompletion:^(BOOL success, NSArray *result, APIError *error) {
-	  NSArray *info = [result.firstObject objectForKey:@"result"];
-	  [info enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
-		NSDictionary *volunteer = [obj objectForKey:@"volunteer"];
-		[weakSelf.freeVolunteers addObject:volunteer];
-		[weakSelf.volunteerTableView reloadData];
-	  }];
-	}];
 }
 
 - (void)setupFavoriteButton {
@@ -51,13 +34,46 @@
   self.navigationItem.rightBarButtonItem = barButton;
 }
 
-//- (void)assign {
-//  NSIndexPath *selectedPath = [self.volunteerTableView indexPathForSelectedRow];
-//  if (selectedPath.section == 1) {
-//	NSDictionary *info = [self.freeVolunteers objectAtIndex:selectedPath.row];
-//	NSDictionary *param = @{@"eventId": self.event.eventId, @"volunteerId": [info objectForKey:@"id"], @"startingDate" };
-//  }
-//}
+- (void)setupDataSource {
+  [self.assignedVolunteers removeAllObjects];
+  [self.freeVolunteers removeAllObjects];
+  __block AssignmentViewController *weakSelf = self;
+  [[ICSDataManager shared] fetchAssignmentsForEvent:self.event.eventId withCompletion:^(BOOL success, NSArray *result, APIError *error) {
+	NSArray *info = [result.firstObject objectForKey:@"result"];
+	[info enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+	  NSDictionary *volunteer = [obj objectForKey:@"volunteer"];
+	  [weakSelf.assignedVolunteers addObject:volunteer];
+	  [weakSelf.volunteerTableView reloadData];
+	}];
+  }];
+
+  [[ICSDataManager shared] fetchFreeVolunteersWithCompletion:^(BOOL success, NSArray *result, APIError *error) {
+	NSArray *info = [result.firstObject objectForKey:@"result"];
+	[info enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+	  NSDictionary *volunteer = [obj objectForKey:@"volunteer"];
+	  [weakSelf.freeVolunteers addObject:volunteer];
+	  [weakSelf.volunteerTableView reloadData];
+	}];
+  }];
+}
+
+- (void)assign {
+  NSIndexPath *selectedPath = [self.volunteerTableView indexPathForSelectedRow];
+  if (selectedPath.section == 1) {
+	NSDictionary *info = [self.freeVolunteers objectAtIndex:selectedPath.row];
+	NSDictionary *param = @{@"volunteerId": [info objectForKey:@"id"],
+					   @"startDate": [self dateJSONTransformer:self.event.startDate], @"endDate": [self dateJSONTransformer:self.event.endDate]};
+	[[ICSDataManager shared] assignVolunteerToEvent:self.event.eventId withParam:param withCompletion:^(BOOL success, id result, APIError *error) {
+	  [self setupDataSource];
+	}];
+  }
+}
+
+- (NSString*)dateJSONTransformer:(NSDate *)date {
+  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+  [dateFormatter setDateFormat:@"YYYY-MM-dd'T'HH:mm:ssZZZ"];
+  return [dateFormatter stringFromDate:date];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

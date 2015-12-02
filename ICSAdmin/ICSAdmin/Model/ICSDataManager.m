@@ -147,4 +147,11 @@ static ICSDataManager *sharedInstance = nil;
 									completion(success,result,error);
 					 			 }];
 }
+
+- (void)assignVolunteerToEvent:(NSString *)eventId withParam:(NSDictionary *)param withCompletion:(ICSDataManagerCompletionBlock)completion {
+  NSString *path = [NSString stringWithFormat:@"%@/%@?token=%@",kAPIPathCreateAssignment, eventId, self.currentUser.token];
+  [[AdminAPIInterface sharedInstance]postPath:path parameters:param completion:^(BOOL success, NSArray *result, APIError *error) {
+	completion(success,result,error);
+  }];
+}
 @end
