@@ -14,15 +14,17 @@
 @property (nonatomic, strong) NSMutableArray *assignedVolunteers;
 @property (nonatomic, strong) NSMutableArray *freeVolunteers;
 @property (weak, nonatomic) IBOutlet UITableView *volunteerTableView;
+@property (nonatomic, strong) UIBarButtonItem *barButton;
 
 @end
 
 @implementation AssignmentViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    self.assignedVolunteers = [NSMutableArray array];
-	self.freeVolunteers = [NSMutableArray array];
+  [super viewDidLoad];
+  [self setupFavoriteButton];
+  self.assignedVolunteers = [NSMutableArray array];
+  self.freeVolunteers = [NSMutableArray array];
 
   	__block AssignmentViewController *weakSelf = self;
 	[[ICSDataManager shared] fetchAssignmentsForEvent:self.event.eventId withCompletion:^(BOOL success, NSArray *result, APIError *error) {
@@ -43,6 +45,19 @@
 	  }];
 	}];
 }
+
+- (void)setupFavoriteButton {
+  UIBarButtonItem *barButton = [[UIBarButtonItem alloc]initWithTitle:@"Assign" style:UIBarButtonItemStylePlain target:self action:@selector(assign)];
+  self.navigationItem.rightBarButtonItem = barButton;
+}
+
+//- (void)assign {
+//  NSIndexPath *selectedPath = [self.volunteerTableView indexPathForSelectedRow];
+//  if (selectedPath.section == 1) {
+//	NSDictionary *info = [self.freeVolunteers objectAtIndex:selectedPath.row];
+//	NSDictionary *param = @{@"eventId": self.event.eventId, @"volunteerId": [info objectForKey:@"id"], @"startingDate" };
+//  }
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
