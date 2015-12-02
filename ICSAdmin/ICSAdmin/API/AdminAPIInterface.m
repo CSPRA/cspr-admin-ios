@@ -137,12 +137,13 @@
   [eventMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"cancerType"
 																			   toKeyPath:@"cancerType"
 																			 withMapping:cancertypeMapping]];
-  
+//  [eventMapping addPropertyMapping:]
+
   responseDescriptor =
   [RKResponseDescriptor responseDescriptorWithMapping:eventMapping
 											   method:RKRequestMethodGET
 										  pathPattern:kAPIPathEvent
-											  keyPath:@"result"
+											  keyPath:@"results"
 										  statusCodes:self.successSet];
   [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
 }

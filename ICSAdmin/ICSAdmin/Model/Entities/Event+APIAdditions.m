@@ -12,10 +12,10 @@
 
 +(RKObjectMapping *)restkitObjectMapping {
   RKObjectMapping* eventMapping = [RKObjectMapping mappingForClass:[Event class]];
-  [eventMapping addAttributeMappingsFromDictionary:@{  @"id": @"eventId",
-													   @"name": @"eventName",
-													   @"startDate": @"startDate",
-													   @"endDate": @"endDate",
+  [eventMapping addAttributeMappingsFromDictionary:@{  @"eventId": @"eventId",
+													   @"eventName": @"eventName",
+													   @"startingDate": @"startDate",
+													   @"endingDate": @"endDate",
 													   @"formId": @"detectionFormId",
 													   @"created_at":@"createdAt",
 													   @"eventType" : @"eventTypeString"

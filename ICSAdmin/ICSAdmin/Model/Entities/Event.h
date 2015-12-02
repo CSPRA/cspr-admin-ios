@@ -34,4 +34,5 @@ typedef enum {
 @property (nonatomic, strong) NSString *detectionFormId;
 @property (nonatomic, strong) NSDate *createdAt;
 
+
 @end

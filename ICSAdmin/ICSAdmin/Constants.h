@@ -9,8 +9,8 @@
 #ifndef Constants_h
 #define Constants_h
 
-static NSString * const kApiBaseUrl = @"http://cspr-web-dev.elasticbeanstalk.com/";
-//static NSString * const kApiBaseUrl = @"http://localhost:8080/";
+//static NSString * const kApiBaseUrl = @"http://cspr-web-dev.elasticbeanstalk.com/";
+static NSString * const kApiBaseUrl = @"http://localhost:8080/";
 
 #pragma mark - API Endpoints
 
