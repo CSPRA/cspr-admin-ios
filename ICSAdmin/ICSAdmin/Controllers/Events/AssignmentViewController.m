@@ -9,7 +9,11 @@
 #import "AssignmentViewController.h"
 #import "ICSDataManager.h"
 
-@interface AssignmentViewController ()
+@interface AssignmentViewController ()<UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) NSMutableArray *assignedVolunteers;
+@property (nonatomic, strong) NSMutableArray *freeVolunteers;
+@property (weak, nonatomic) IBOutlet UITableView *volunteerTableView;
 
 @end
 
@@ -17,8 +21,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	[[ICSDataManager shared] fetchAssignmentsForEvent:self.event.eventId withCompletion:^(BOOL success, id result, APIError *error) {
+    self.assignedVolunteers = [NSMutableArray array];
+	self.freeVolunteers = [NSMutableArray array];
 
+  	__block AssignmentViewController *weakSelf = self;
+	[[ICSDataManager shared] fetchAssignmentsForEvent:self.event.eventId withCompletion:^(BOOL success, NSArray *result, APIError *error) {
+	  NSArray *info = [result.firstObject objectForKey:@"result"];
+	 [info enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+	   NSDictionary *volunteer = [obj objectForKey:@"volunteer"];
+	   [weakSelf.assignedVolunteers addObject:volunteer];
+	   [weakSelf.volunteerTableView reloadData];
+	 }];
+	}];
+
+	[[ICSDataManager shared] fetchFreeVolunteersWithCompletion:^(BOOL success, NSArray *result, APIError *error) {
+	  NSArray *info = [result.firstObject objectForKey:@"result"];
+	  [info enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+		NSDictionary *volunteer = [obj objectForKey:@"volunteer"];
+		[weakSelf.freeVolunteers addObject:volunteer];
+		[weakSelf.volunteerTableView reloadData];
+	  }];
 	}];
 }
 
@@ -36,5 +58,53 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - UITableViewDatasource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  switch (section) {
+	case 0:
+	  return self.assignedVolunteers.count;
+	case 1:
+	  return self.freeVolunteers.count;
+	default:
+	  return 0;
+  }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"volunteerCell"];
+  NSDictionary *info;
+  switch (indexPath.section) {
+	case 0: {
+	 	info = [self.assignedVolunteers objectAtIndex:indexPath.row];
+		break;
+		}
+	case 1: {
+	 	info = [self.freeVolunteers objectAtIndex:indexPath.row];
+		break;
+	}
+	default:
+	  break;
+  }
+  NSString *name = [info objectForKey:@"name"];
+  cell.textLabel.text = name;
+  return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+  switch (section) {
+	case 0:
+		return @"Volunteers Assigned";
+	case 1:
+		return @"Volunteers Not Assigned";
+	default:
+	  	return @"";
+  }
+}
 
 @end

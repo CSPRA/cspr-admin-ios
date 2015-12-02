@@ -21,5 +21,6 @@ static NSString * const kAPIPathEvent = @"events";
 static NSString * const kAPIPathStatistics = @"statistics";
 static NSString * const kAPIPathPatternAssignments = @"assignments/:eventId";
 static NSString * const kAPIPathAssignments = @"assignments";
+static NSString * const kAPIPathFreeVolunteers = @"freeVolunteers";
 
 #endif /* Constants_h */

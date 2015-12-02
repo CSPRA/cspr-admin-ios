@@ -138,4 +138,13 @@ static ICSDataManager *sharedInstance = nil;
 					 			 }];
 
 }
+
+- (void)fetchFreeVolunteersWithCompletion:(ICSDataManagerCompletionBlock)completion {
+  NSDictionary *param = @{@"token":self.currentUser.token};
+  [[AdminAPIInterface sharedInstance]getPath:kAPIPathFreeVolunteers
+								  parameters:param
+								  completion:^(BOOL success, id result, APIError *error) {
+									completion(success,result,error);
+					 			 }];
+}
 @end

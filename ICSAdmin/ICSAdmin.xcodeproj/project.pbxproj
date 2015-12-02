@@ -29,6 +29,7 @@
 		4E88B7EE1BDE1EAC00560B14 /* SelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E88B7ED1BDE1EAC00560B14 /* SelectorView.m */; };
 		4E9436881C0E09060070042D /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E9436871C0E09060070042D /* EventCell.xib */; };
 		4E9436C91C0EED7B0070042D /* AssignmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9436C81C0EED7B0070042D /* AssignmentViewController.m */; };
+		4E9436D71C0F41BE0070042D /* Assignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9436D61C0F41BE0070042D /* Assignment.m */; };
 		4EDCEE5D1BD4D0F6000847BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCEE5C1BD4D0F6000847BA /* main.m */; };
 		4EDCEE691BD4D0F6000847BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EDCEE671BD4D0F6000847BA /* Main.storyboard */; };
 		4EDCEE6B1BD4D0F6000847BA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EDCEE6A1BD4D0F6000847BA /* Images.xcassets */; };
@@ -110,6 +111,8 @@
 		4E9436871C0E09060070042D /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventCell.xib; path = Views/EventCell.xib; sourceTree = "<group>"; };
 		4E9436C71C0EED7B0070042D /* AssignmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssignmentViewController.h; path = Controllers/Events/AssignmentViewController.h; sourceTree = "<group>"; };
 		4E9436C81C0EED7B0070042D /* AssignmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssignmentViewController.m; path = Controllers/Events/AssignmentViewController.m; sourceTree = "<group>"; };
+		4E9436D51C0F41BE0070042D /* Assignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Assignment.h; path = Model/Entities/Assignment.h; sourceTree = "<group>"; };
+		4E9436D61C0F41BE0070042D /* Assignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Assignment.m; path = Model/Entities/Assignment.m; sourceTree = "<group>"; };
 		4EDCEE571BD4D0F6000847BA /* ICSAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICSAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EDCEE5B1BD4D0F6000847BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EDCEE5C1BD4D0F6000847BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -206,6 +209,8 @@
 				4E2A87AD1BE1EEE900F553B2 /* User+CoreDataProperties.m */,
 				4E2A87B51BE1F11400F553B2 /* Event+APIAdditions.h */,
 				4E2A87B61BE1F11400F553B2 /* Event+APIAdditions.m */,
+				4E9436D51C0F41BE0070042D /* Assignment.h */,
+				4E9436D61C0F41BE0070042D /* Assignment.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -569,6 +574,7 @@
 				4EDCEEAA1BD51970000847BA /* HomeViewController.m in Sources */,
 				4EDCEEA71BD502B3000847BA /* SignupViewController.m in Sources */,
 				4EDCEE8C1BD4F363000847BA /* ICSModel.m in Sources */,
+				4E9436D71C0F41BE0070042D /* Assignment.m in Sources */,
 				4E2A877E1BE0BEFF00F553B2 /* AdminAPIInterface.m in Sources */,
 				4E2A87B71BE1F11400F553B2 /* Event+APIAdditions.m in Sources */,
 				4EDCEE851BD4F1CB000847BA /* ICSAdmin.xcdatamodeld in Sources */,
